@@ -57,6 +57,39 @@ Esta carpeta contiene **todo lo que ve y usa el cliente final**, es decir, la pa
 
 ---
 
+## 🌿 Flujo de trabajo con ramas (obligatorio)
+
+Para proteger el proyecto en producción, **nadie hace cambios directamente en `main`**. El flujo es siempre el siguiente:
+
+### 1️⃣ Crea una rama nueva para tu tarea
+```bash
+git checkout -b nombre-de-tu-rama
+```
+Usa nombres descriptivos, por ejemplo: `feature/login-admin`, `fix/boton-contacto`, `mejora/navbar-publica`.
+
+### 2️⃣ Trabaja y prueba en tu rama
+Desarrolla tu parte, pruébala localmente y asegúrate de que todo funciona **antes** de tocar `main`.
+
+### 3️⃣ Haz merge a main solo cuando esté listo
+```bash
+git checkout main
+git merge nombre-de-tu-rama
+```
+O abre un **Pull Request** en GitHub para que el equipo pueda revisarlo antes de fusionarlo.
+
+### 4️⃣ Elimina la rama cuando ya se hizo el merge
+```bash
+git branch -d nombre-de-tu-rama
+```
+Una rama cumplió su propósito cuando ya está en `main`. No la dejes acumulando polvo.
+
+### 5️⃣ Para una nueva tarea, crea una rama nueva desde cero
+No reutilices ramas viejas. Cada tarea o funcionalidad nueva = rama nueva.
+
+> 🚨 **¿Por qué esto importa?** `main` es lo que está corriendo en producción. Si subes código roto directo ahí, el sistema se cae para todos, incluyendo los clientes. Las ramas existen exactamente para evitar eso.
+
+---
+
 ## 🤝 ¿Dudas?
 
 Si tienes preguntas sobre en qué zona debe ir tu código, pregúntale al equipo antes de crear nuevos archivos. Es mejor preguntar que tener que reorganizar después. 🐮
