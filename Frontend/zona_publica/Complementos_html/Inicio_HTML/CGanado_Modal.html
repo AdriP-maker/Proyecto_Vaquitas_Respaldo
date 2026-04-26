@@ -54,3 +54,102 @@
 
   </div>
 </div>
+
+
+
+<!-- Modal Ver Detalles -->
+<div class="modal-overlay" id="modalDetallesOverlay">
+  <div class="modal-box">
+ 
+    <!-- Header -->
+    <div class="modal-header">
+      <div>
+        <h3 class="modal-titulo">Información General</h3>
+        <p class="modal-subtitulo">Datos clave y características del animal</p>
+      </div>
+      <button class="modal-cerrar" id="modalDetallesCerrar">&times;</button>
+    </div>
+ 
+    <!-- Info principal -->
+    <div class="modal-animal">
+      <img src="" alt="Animal" class="modal-det-img" id="modalDetImg">
+      <div class="modal-det-tabla">
+        <div class="modal-det-fila"><span class="det-label">Número:</span><span class="det-valor" id="detNumero"></span></div>
+        <div class="modal-det-fila"><span class="det-label">Raza:</span><span class="det-valor" id="detRaza"></span></div>
+        <div class="modal-det-fila"><span class="det-label">Edad:</span><span class="det-valor" id="detEdad"></span></div>
+        <div class="modal-det-fila"><span class="det-label">Peso:</span><span class="det-valor" id="detPeso"></span></div>
+        <div class="modal-det-fila"><span class="det-label">Producción:</span><span class="det-valor" id="detProduccion"></span></div>
+        <div class="modal-det-fila"><span class="det-label">Vacunas:</span><span class="det-valor" id="detVacunas"></span></div>
+      </div>
+    </div>
+ 
+    <!-- Gráfica producción -->
+    <div class="modal-det-card card-grafica">
+      <div class="modal-det-grafica-wrap">
+        <canvas id="graficaProduccion"></canvas>
+      </div>
+      <div class="modal-det-grafica-controles">
+        <h4>Producción</h4>
+        <p class="det-control-label">Visualización por:</p>
+        <div class="det-btn-group" id="btnVista">
+          <button class="det-btn active" data-vista="mensual">Mensual</button>
+          <button class="det-btn" data-vista="diaria">Diaria</button>
+        </div>
+        <p class="det-control-label">Unidad de producción:</p>
+        <div class="det-btn-group" id="btnUnidad">
+          <button class="det-btn active" data-unidad="litros">Litros(L)</button>
+          <button class="det-btn" data-unidad="galones">Galones(gal)</button>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- Genética y Origen — árbol genealógico -->
+    <div class="modal-det-card card-genetica">
+      <h4 class="det-genetica-titulo">Genética y Origen</h4>
+      <p class="det-section-label">Progenitores</p>
+ 
+      <!-- Padre y Madre -->
+      <div class="det-progenitores">
+        <div class="det-progenitor">
+          <span class="det-badge det-padre">Padre</span>
+          <span class="det-num" id="detPadreNum"></span>
+          <div class="det-prog-datos">
+            <span>Raza: <strong id="detPadreRaza"></strong></span>
+            <span>Edad: <strong id="detPadreEdad"></strong></span>
+            <span>Peso: <strong id="detPadrePeso"></strong></span>
+            <span>Estado: <strong id="detPadreEstado"></strong></span>
+          </div>
+        </div>
+        <div class="det-progenitor">
+          <span class="det-badge det-madre">Madre</span>
+          <span class="det-num" id="detMadreNum"></span>
+          <div class="det-prog-datos">
+            <span>Raza: <strong id="detMadreRaza"></strong></span>
+            <span>Edad: <strong id="detMadreEdad"></strong></span>
+            <span>Peso: <strong id="detMadrePeso"></strong></span>
+            <span>Estado: <strong id="detMadreEstado"></strong></span>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- Conector vertical + etiqueta Descendiente -->
+      <div class="det-conector">
+        <div class="det-conector-linea-v"></div>
+        <span class="det-conector-label">Descendiente</span>
+        <div class="det-conector-linea-v"></div>
+      </div>
+ 
+      <!-- Cría -->
+      <div class="det-descendiente">
+        <span class="det-badge det-cria">Cría</span>
+        <span class="det-num" id="detCriaNum"></span>
+        <span>Raza: <strong id="detCriaRaza"></strong></span>
+      </div>
+    </div>
+ 
+    <div class="modal-botones">
+      <button class="modal-btn-cancelar" id="modalDetallesCerrar2">Cerrar</button>
+    </div>
+ 
+  </div>
+</div>

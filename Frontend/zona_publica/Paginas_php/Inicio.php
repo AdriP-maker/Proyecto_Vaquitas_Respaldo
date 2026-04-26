@@ -65,6 +65,7 @@
       <!-- =====Fin Modal de las CardGanado====== -->
 
     <!-- ===== Animación del carrusel ===== -->
+     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../Componentes_Visuales_Animados/js/LgCarrusel.js"></script>
     <script src="../Componentes_Visuales_Animados/js/GanadoModal.js"></script>
 </body>
