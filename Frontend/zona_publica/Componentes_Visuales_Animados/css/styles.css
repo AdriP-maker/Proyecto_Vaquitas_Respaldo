@@ -65,7 +65,7 @@ body {
 }
 
 .navbar.scrolled {
-  background: var(--nav-bg-solid);
+  background:  rgba(57, 92, 67, 0.96);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
 }
 
