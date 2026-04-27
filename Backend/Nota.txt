@@ -1,1 +1,3 @@
-Usen las carpetas para mayor organizacion
+Usen las carpetas para mayor organización
+
+AQUI NO VA NADA DE MOMENTO POR QUE ES LA PARTE LOGICA PARA UNIR CON EL FRONTED
