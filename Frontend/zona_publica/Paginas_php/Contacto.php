@@ -6,7 +6,7 @@
   <title>Contactos – HOFLOC S.A.</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&family=Inter:wght@400;500;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <link rel="stylesheet" href="../Componentes_Visuales_Animados\Contacto_html\css\estilos.css">
+  <link rel="stylesheet" href="../Componentes_Visuales_Animados\Contacto\css\estilos.css">
   
 </head>
 <body>
