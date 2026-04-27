@@ -1,0 +1,97 @@
+<!-- ===== GRÁFICAS ===== -->
+<div class="charts-row">
+
+  <!-- Donut: División de leche -->
+  <div class="chart-card">
+    <div class="chart-card-header">
+      <div>
+        <h3>División de Leche</h3>
+        <p>Últimos 30 días</p>
+      </div>
+      <span class="chart-period-badge">% Distribución</span>
+    </div>
+
+    <canvas id="donutChart" height="180"></canvas>
+
+    <div class="donut-legend">
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#3a6b30"></div>
+        Leche a la venta — 50%
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#62a855"></div>
+        Consumo de terneros — 25%
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#c8952e"></div>
+        Consumo en casa — 25%
+      </div>
+    </div>
+  </div>
+
+  <!-- Bar: Producción semanal -->
+  <div class="chart-card">
+    <div class="chart-card-header">
+      <div>
+        <h3>Producción de Leche</h3>
+        <p>Por semana — últimas 5 semanas</p>
+      </div>
+      <span class="chart-period-badge">Semanal</span>
+    </div>
+    <div style="position:relative;height:240px;">
+      <canvas id="barChart"></canvas>
+    </div>
+  </div>
+
+  <!-- Panel: Próximos sucesos -->
+  <div class="chart-card">
+    <div class="chart-card-header">
+      <div>
+        <h3>Próximos Sucesos</h3>
+        <p>Eventos programados</p>
+      </div>
+    </div>
+
+    <div class="events-panel">
+
+      <div class="event-item type-control">
+        <div class="event-type-tag">Control Animal</div>
+        <div class="event-desc">Ejemplar #4401 — visita veterinaria para revisión</div>
+        <div class="event-time"><i class="fa-regular fa-clock"></i> En 2 días</div>
+      </div>
+
+      <div class="event-item type-parto">
+        <div class="event-type-tag">Próximo Parto</div>
+        <div class="event-desc">Ejemplar #4021 debe entrar a manga en 5 días</div>
+        <div class="event-time"><i class="fa-regular fa-clock"></i> En 5 días</div>
+      </div>
+
+      <div class="event-item type-control">
+        <div class="event-type-tag">Control Animal</div>
+        <div class="event-desc">Cambio de manga de ejemplares paridas en 30 días</div>
+        <div class="event-time"><i class="fa-regular fa-clock"></i> En 30 días</div>
+      </div>
+
+      <div class="event-item type-alert">
+        <div class="event-type-tag">Alerta</div>
+        <div class="event-desc">Palpación de ejemplar P3622 — vence en 9 días</div>
+        <div class="event-time"><i class="fa-regular fa-clock"></i> En 9 días</div>
+      </div>
+
+      <div class="event-item type-control">
+        <div class="event-type-tag">Control Animal</div>
+        <div class="event-desc">Ejemplar #4325 — visita veterinaria hoy</div>
+        <div class="event-time"><i class="fa-regular fa-clock"></i> Hoy</div>
+      </div>
+
+      <div class="event-item type-parto">
+        <div class="event-type-tag">Próximo Parto</div>
+        <div class="event-desc">Ejemplar H4325 debe entrar a manga en 5 días</div>
+        <div class="event-time"><i class="fa-regular fa-clock"></i> En 5 días</div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+<!-- ===== FIN GRÁFICAS ===== -->
