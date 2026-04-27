@@ -1,0 +1,110 @@
+<aside class="admin-sidebar">
+
+  <div class="sidebar-brand">
+    <div class="brand-name">HOFLOC.SA</div>
+    <div class="brand-sub">Panel Administrativo</div>
+  </div>
+
+  <nav class="sidebar-nav">
+
+    <!-- PRINCIPAL -->
+    <div class="nav-label">Principal</div>
+
+    <a href="dashboard.php" class="nav-item active" id="nav-finca">
+      <i class="fa-solid fa-house"></i>
+      Finca
+    </a>
+
+    <!-- Operaciones con submenú -->
+    <div class="nav-item" id="nav-operaciones" onclick="toggleSubmenu('sub-operaciones', this)">
+      <i class="fa-solid fa-gears"></i>
+      Operaciones
+      <i class="fa-solid fa-chevron-down nav-toggle-icon"></i>
+    </div>
+    <div class="nav-submenu" id="sub-operaciones">
+      <a href="produccion.php" class="nav-item">
+        <i class="fa-solid fa-droplet"></i> Producción
+      </a>
+      <a href="gestion_insumos.php" class="nav-item">
+        <i class="fa-solid fa-boxes-stacked"></i> Gestión Insumos
+      </a>
+      <a href="pesaje.php" class="nav-item">
+        <i class="fa-solid fa-weight-scale"></i> Pesaje
+      </a>
+      <a href="gestion_sanitaria.php" class="nav-item">
+        <i class="fa-solid fa-syringe"></i> Gestión Sanitaria
+      </a>
+      <a href="mortalidad.php" class="nav-item">
+        <i class="fa-solid fa-skull"></i> Mortalidad
+      </a>
+    </div>
+
+    <!-- Gestión de Ganado con submenú -->
+    <div class="nav-item" id="nav-ganado" onclick="toggleSubmenu('sub-ganado', this)">
+      <i class="fa-solid fa-cow"></i>
+      Gestión de Ganado
+      <i class="fa-solid fa-chevron-down nav-toggle-icon"></i>
+    </div>
+    <div class="nav-submenu" id="sub-ganado">
+      <a href="ganado.php" class="nav-item">
+        <i class="fa-solid fa-cow"></i> Registro Ganadero
+      </a>
+      <a href="reproduccion.php" class="nav-item">
+        <i class="fa-solid fa-dna"></i> Reproducción
+      </a>
+      <a href="crias.php" class="nav-item">
+        <i class="fa-solid fa-baby"></i> Crías
+      </a>
+      <a href="mangas.php" class="nav-item">
+        <i class="fa-solid fa-layer-group"></i> Mangas
+      </a>
+    </div>
+
+    <a href="alertas.php" class="nav-item">
+      <i class="fa-solid fa-triangle-exclamation"></i>
+      Alertas
+    </a>
+
+    <a href="reportes.php" class="nav-item">
+      <i class="fa-solid fa-file-chart-column"></i>
+      Reportes
+    </a>
+
+    <a href="colaboradores.php" class="nav-item">
+      <i class="fa-solid fa-users"></i>
+      Colaboradores
+    </a>
+
+    <!-- NUEVO -->
+    <div class="nav-divider"></div>
+    <div class="nav-label">Finanzas</div>
+
+    <a href="contabilidad.php" class="nav-item">
+      <i class="fa-solid fa-calculator"></i>
+      Contabilidad
+    </a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-label">Sistema</div>
+
+    <a href="configuracion.php" class="nav-item">
+      <i class="fa-solid fa-sliders"></i>
+      Configuración
+    </a>
+
+    <a href="../zona_publica/Paginas_php/Inicio.php" class="nav-item">
+      <i class="fa-solid fa-arrow-right-from-bracket"></i>
+      Cerrar Sesión
+    </a>
+
+  </nav>
+
+  <div class="sidebar-user">
+    <div class="user-avatar">HO</div>
+    <div class="user-info">
+      <div class="user-name">Horacio</div>
+      <div class="user-role">Administrador</div>
+    </div>
+  </div>
+
+</aside>
