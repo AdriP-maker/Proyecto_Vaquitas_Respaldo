@@ -12,7 +12,11 @@ define('COMPONENTES', $dir_base . '/Complementos_html/HTML_Mortalidad');
 define('COMPLEMENTOS', $dir_base . '/Complementos_html/HTML_Dashboard');
 
 $pageTitle  = "Mortalidad";
-$breadcrumb = [['label' => 'Inicio']];
+$breadcrumb = [
+    ['label' => 'Inicio', 'url' => 'dashboard.php'],
+    ['label' => 'Operaciones'],
+    ['label' => 'Mortalidad']
+];
 ?>
 
 <!DOCTYPE html>
@@ -69,7 +73,41 @@ $breadcrumb = [['label' => 'Inicio']];
     </script>
 </body>
 
+<script src="../Componentes_Visuales_Animados/js/admin_dashboard.js"></script>
 <script src="../Componentes_Visuales_Animados/js/mortalidad.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </html>
+
+<!--Mejora del color resaltado del Sidebar y desactivar el active y colocar el 
+resaltado en la opción correcta-->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+        const currentPage = window.location.pathname.split("/").pop();
+
+        const navItems = document.querySelectorAll(".nav-item");
+
+        // quitar todos los active
+        navItems.forEach(item => item.classList.remove("active"));
+
+        // asignar el correcto
+        navItems.forEach(item => {
+            const href = item.getAttribute("href");
+
+            if (href && href === currentPage) {
+                item.classList.add("active");
+
+                // abrir submenu si aplica
+                const submenu = item.closest(".nav-submenu");
+                if (submenu) {
+                    submenu.classList.add("open");
+
+                    const parent = submenu.previousElementSibling;
+                    if (parent) parent.classList.add("open");
+                }
+            }
+        });
+
+    });
+</script>
