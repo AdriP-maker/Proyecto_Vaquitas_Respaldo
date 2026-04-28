@@ -1,0 +1,268 @@
+/*Estilos únicos de pagina de mortalidad*/
+body {
+  background-color: #f4f7f6;
+  font-family: 'Inter', 'Outfit', sans-serif;
+}
+
+/*Mejora del botón de registrar*/
+.btn-registrar {
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border: none;
+  color: white;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.btn-registrar:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+}
+
+/* KPI Cards */
+.kpi-card-v2 {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 100%; /* 🔥 MISMO ALTO */
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+/* línea lateral */
+.kpi-card-v2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  border-radius: 4px 0 0 4px;
+  background: linear-gradient(to bottom, #10b981, #3b82f6);
+}
+
+.kpi-card-v2:hover {
+  transform: translateY(-3px);
+}
+
+/* ICONO */
+.kpi-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(16,185,129,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: #10b981;
+  flex-shrink: 0;
+}
+
+/*Imagen icon*/
+.kpi-icon img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+/* TEXTO */
+.kpi-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.kpi-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.kpi-value {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.kpi-sub {
+  font-size: 0.65rem;
+  color: #10b981;
+}
+
+/* COLORES DIFERENTES */
+.kpi-card-v2.hembra .kpi-icon {
+  background: rgba(209,107,165,0.15);
+  color: #d16ba5;
+}
+
+.kpi-card-v2.macho .kpi-icon {
+  background: rgba(74,140,63,0.15);
+  color: #4a8c3f;
+}
+/*Estilos de la tabla de datos*/
+.tabla-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: none;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+  padding: 10px;
+}
+
+.title-icon {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+/* Filtros */
+.search-box input {
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  padding: 8px 16px 8px 40px;
+  background: #f8fafc;
+  transition: all 0.2s ease;
+  width: 280px; /* Increased lateral size */
+}
+
+.search-box input:focus {
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+  background: #ffffff;
+}
+
+.filter-select {
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  padding: 8px 32px 8px 16px;
+  background-color: #f8fafc;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 130px; 
+}
+
+.filter-select:focus {
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+/* Tabla */
+.table-wrapper-scroll {
+  max-height: 320px; 
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-radius: 10px;
+}
+/* Scroll */
+.table-wrapper-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.table-wrapper-scroll::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+/* Header fijo */
+.custom-table thead th {
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  z-index: 2;
+}
+
+.custom-table {
+  margin-bottom: 0;
+}
+
+.custom-table thead {
+  background: #f8fafc;
+}
+
+.custom-table thead th {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #64748b;
+  border-bottom: 2px solid #e2e8f0;
+  padding: 16px;
+  font-weight: 700;
+}
+
+.custom-table tbody td {
+  padding: 16px;
+  color: #475569;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+}
+
+.custom-table tbody tr {
+  transition: all .2s ease;
+}
+
+.custom-table tbody tr:hover {
+  background: #f8fafc;
+  transform: scale(1.002);
+}
+
+.cursor-pointer { cursor: pointer; }
+
+/* Badge redondeado tipo pill */
+.estado-badge {
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Colores */
+.estado-badge.danger {
+  background: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.estado-badge.warning {
+  background: rgba(245, 158, 11, 0.1);
+  color: #d97706;
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.estado-badge.purple {
+  background: rgba(139, 92, 246, 0.1);
+  color: #7c3aed;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+/*Ajustar tamaño grafica*/
+.grafica-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: none;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+  padding: 10px;
+}
+
+.grafica-card .card-body {
+  position: relative;
+  height: 300px;
+}
+
+.grafica-card canvas {
+  max-height: 100%;
+}

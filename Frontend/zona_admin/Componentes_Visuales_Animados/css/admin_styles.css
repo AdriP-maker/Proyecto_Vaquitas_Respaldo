@@ -143,39 +143,44 @@ body {
 .nav-item {
   display: flex;
   align-items: center;
-  gap: .7rem;
-  padding: .7rem 1.2rem;
-  color: var(--sidebar-txt); /* Texto oscuro para los enlaces */
+  gap: .8rem;
+  padding: .8rem 1.2rem;
+  margin: 0.2rem 1rem;
+  border-radius: 10px;
+  color: var(--sidebar-txt); 
   text-decoration: none;
   font-size: .95rem;
   font-weight: 500;
-  transition: all .2s ease;
+  transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   position: relative;
-  /* Se eliminó el border-left porque en la imagen no existe */
 }
 
 .nav-item i {
-  width: 20px;
+  width: 22px;
   text-align: center;
-  font-size: 1rem;
-  color: rgba(28, 43, 30, 0.85); /* Iconos oscuros */
-  transition: color .2s;
+  font-size: 1.1rem;
+  color: rgba(28, 43, 30, 0.7); 
+  transition: all .3s ease;
 }
 
 .nav-item:hover,
 .nav-item.active {
   color: var(--sidebar-txt);
-  background: var(--sidebar-active-bg); /* Fondo blanquecino definido en tus variables */
+  background: rgba(255, 255, 255, 0.4); 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transform: translateX(4px);
 }
 
 .nav-item:hover i,
 .nav-item.active i {
-  color: var(--sidebar-txt);
+  color: var(--teal-800);
+  transform: scale(1.1);
 }
 
 .nav-item.active {
   font-weight: 700;
+  background: rgba(255, 255, 255, 0.6);
 }
 
 /* Submenu */
@@ -260,6 +265,7 @@ body {
   border-bottom: 1px solid var(--card-border);
   display: flex;
   align-items: center;
+  justify-content: space-between; /* pushes left and right elements apart */
   padding: 0 2rem;
   gap: 1rem;
   height: var(--topbar-h);
@@ -271,28 +277,35 @@ body {
 .topbar-breadcrumb {
   display: flex;
   align-items: center;
-  gap: .4rem;
-  font-size: .83rem;
-  color: #6b8080;
-  flex: 1;
+  gap: .6rem;
+  font-size: .85rem;
+  color: #64748b;
+  background: #f8fafc;
+  padding: 8px 16px;
+  border-radius: 50px;
+  max-width: fit-content;
+  border: 1px solid #e2e8f0;
 }
 
 .topbar-breadcrumb a {
   color: var(--teal-500);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
 }
 
-.topbar-breadcrumb a:hover { text-decoration: underline; }
+.topbar-breadcrumb a:hover { color: var(--teal-700); }
 
 .breadcrumb-sep {
-  color: #b0c4c4;
-  font-size: .75rem;
+  color: #cbd5e1;
+  font-size: 1rem;
+  line-height: 1;
 }
 
 .breadcrumb-current {
-  color: #1a2e2e;
-  font-weight: 600;
+  color: #334155;
+  font-weight: 700;
 }
 
 .topbar-right {
