@@ -1,0 +1,348 @@
+/* =============================================
+   PESAJE – Estilos específicos
+   HOFLOC.SA
+   ============================================= */
+
+/* ── Tarjeta formulario ─────────────────────── */
+.pesaje-card {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.07);
+  border-radius: 14px;
+  padding: 1.5rem 1.6rem;
+  box-shadow: 0 2px 12px rgba(26,46,26,.07);
+  animation: fadeUp .38s ease both;
+}
+
+.pesaje-section-label {
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #7a9a7a;
+  margin-bottom: 1rem;
+}
+
+/* ── Inputs ─────────────────────────────────── */
+.form-group-pesaje { margin-bottom: 1.1rem; }
+
+.pesaje-label {
+  display: block;
+  font-size: .78rem;
+  font-weight: 700;
+  color: #3a5a3a;
+  margin-bottom: .38rem;
+}
+
+.pesaje-input {
+  width: 100%;
+  height: 40px;
+  border: 1.5px solid #d4e8d0;
+  border-radius: 8px;
+  padding: 0 .85rem;
+  font-family: 'Manrope', sans-serif;
+  font-size: .88rem;
+  color: #1a2e1a;
+  background: #f8fbf7;
+  outline: none;
+  transition: border-color .18s, box-shadow .18s;
+}
+.pesaje-input:focus {
+  border-color: #4a8c3f;
+  box-shadow: 0 0 0 3px rgba(74,140,63,.13);
+  background: #fff;
+}
+.pesaje-input::placeholder { color: #b0c8b0; }
+
+/* ── Buscador ───────────────────────────────── */
+.pesaje-search-wrap { position: relative; }
+.pesaje-search-icon {
+  position: absolute; left: .8rem; top: 50%; transform: translateY(-50%);
+  color: #a0bca0; font-size: .82rem; pointer-events: none;
+}
+.pesaje-search-input { padding-left: 2.1rem; }
+
+/* ── Lista animales ─────────────────────────── */
+.animal-list {
+  border: 1.5px solid #d4e8d0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1.1rem;
+  max-height: 220px;
+  overflow-y: auto;
+}
+.animal-list::-webkit-scrollbar { width: 3px; }
+.animal-list::-webkit-scrollbar-thumb { background: #c8e0c4; border-radius: 2px; }
+
+.animal-item {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  padding: .65rem 1rem;
+  cursor: pointer;
+  transition: background .15s;
+  border-bottom: 1px solid #eef6ec;
+}
+.animal-item:last-child { border-bottom: none; }
+.animal-item:hover { background: #f2faf0; }
+.animal-item.selected { background: rgba(74,140,63,.09); }
+
+.animal-avatar {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.animal-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.animal-name {
+  font-size: .86rem;
+  font-weight: 700;
+  color: #1a2e1a;
+}
+.animal-meta {
+  font-size: .72rem;
+  color: #7a9a7a;
+  margin-top: 1px;
+}
+
+.btn-seleccionar {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  border: none;
+  background: #4a8c3f;
+  color: #fff;
+  font-size: .72rem;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background .18s, transform .18s;
+}
+.btn-seleccionar:hover { background: #3a7230; transform: scale(1.1); }
+
+/* ── Báscula ────────────────────────────────── */
+.btn-bascula {
+  background: #c8952e;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: .4rem 1.1rem;
+  font-family: 'Manrope', sans-serif;
+  font-size: .83rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex; align-items: center; gap: .38rem;
+  transition: background .18s, transform .18s;
+}
+.btn-bascula:hover { background: #b8852a; transform: translateY(-1px); }
+
+/* ── Tipo de alimentación ───────────────────── */
+.alimentacion-group {
+  display: flex;
+  gap: 1.3rem;
+  flex-wrap: wrap;
+  margin-top: .1rem;
+}
+.check-item {
+  display: flex; align-items: center; gap: .38rem;
+  cursor: pointer;
+}
+.check-item input[type="checkbox"] {
+  width: 15px; height: 15px;
+  accent-color: #4a8c3f;
+  cursor: pointer;
+}
+.check-label { font-size: .86rem; color: #3a5a3a; font-weight: 500; }
+
+/* ── Peso ───────────────────────────────────── */
+.peso-input-wrap { position: relative; }
+.peso-unit {
+  position: absolute; right: .85rem; top: 50%; transform: translateY(-50%);
+  font-size: .8rem; font-weight: 700; color: #7a9a7a; pointer-events: none;
+}
+
+/* ── Botones acción ─────────────────────────── */
+.form-actions {
+  display: flex;
+  gap: .85rem;
+  margin-top: 1.5rem;
+}
+
+.btn-cancelar {
+  flex: 1;
+  height: 44px;
+  border: none;
+  border-radius: 10px;
+  background: #d95252;
+  color: #fff;
+  font-family: 'Manrope', sans-serif;
+  font-size: .92rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .18s, transform .18s;
+}
+.btn-cancelar:hover { background: #c04040; transform: translateY(-1px); }
+
+.btn-registrar {
+  flex: 2;
+  height: 44px;
+  border: none;
+  border-radius: 10px;
+  background: #4a8c3f;
+  color: #fff;
+  font-family: 'Manrope', sans-serif;
+  font-size: .92rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center; gap: .4rem;
+  transition: background .18s, transform .18s;
+}
+.btn-registrar:hover { background: #3a7230; transform: translateY(-1px); }
+
+/* ── Resumen del día ────────────────────────── */
+.resumen-card {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.07);
+  border-radius: 14px;
+  padding: 1.2rem 1.3rem;
+  box-shadow: 0 2px 12px rgba(26,46,26,.07);
+  margin-bottom: 1rem;
+  animation: fadeUp .38s ease .08s both;
+}
+
+.resumen-header {
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #7a9a7a;
+  margin-bottom: .9rem;
+}
+
+.resumen-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .8rem;
+  margin-bottom: .9rem;
+}
+
+.resumen-label {
+  font-size: .72rem;
+  color: #8aaa8a;
+  font-weight: 600;
+  margin-bottom: .15rem;
+}
+.resumen-value {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: #1a2e1a;
+  line-height: 1.05;
+}
+.resumen-value .resumen-unit {
+  font-size: .9rem; font-weight: 500;
+}
+.resumen-value-sm {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a2e1a;
+}
+
+.resumen-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #eef4ec;
+  padding-top: .75rem;
+}
+.resumen-total-value {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #4a8c3f;
+}
+
+/* ── Últimos registros ──────────────────────── */
+.ultimos-card {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.07);
+  border-radius: 14px;
+  padding: 1.2rem 1.3rem;
+  box-shadow: 0 2px 12px rgba(26,46,26,.07);
+  animation: fadeUp .38s ease .14s both;
+}
+
+.ultimos-header {
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #7a9a7a;
+  margin-bottom: .8rem;
+}
+
+.ultimos-list {
+  display: flex;
+  flex-direction: column;
+  max-height: 320px;
+  overflow-y: auto;
+  padding-right: 2px;
+}
+.ultimos-list::-webkit-scrollbar { width: 3px; }
+.ultimos-list::-webkit-scrollbar-thumb { background: #c8e0c4; border-radius: 2px; }
+
+.ultimo-item {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  padding: .5rem .4rem;
+  border-radius: 8px;
+  transition: background .15s;
+}
+.ultimo-item:hover { background: #f2faf0; }
+
+.ultimo-item--active {
+  border: 2px solid #9575CD;
+  background: #faf8ff !important;
+  border-radius: 8px;
+}
+
+.ultimo-avatar {
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.ultimo-info {
+  display: flex; flex-direction: column; flex: 1;
+}
+.ultimo-name {
+  font-size: .82rem; font-weight: 700; color: #1a2e1a;
+}
+.ultimo-meta {
+  font-size: .7rem; color: #8aaa8a;
+}
+.ultimo-peso {
+  font-family: 'Outfit', sans-serif;
+  font-size: .88rem; font-weight: 800; color: #4a8c3f;
+  white-space: nowrap;
+}
+
+/* ── Flash alert ────────────────────────────── */
+.alert-flash {
+  position: fixed;
+  top: 70px; right: 1.5rem;
+  z-index: 9999;
+  padding: .75rem 1.2rem;
+  border-radius: 8px;
+  font-size: .86rem; font-weight: 600;
+  display: flex; align-items: center; gap: .5rem;
+  box-shadow: 0 4px 18px rgba(0,0,0,.13);
+  animation: fadeUp .3s ease both;
+}
+.alert-flash--success { background: #eaf8ec; color: #2a7a2a; border: 1px solid #b8e8be; }
+.alert-flash--danger  { background: #fdf0f0; color: #d95252; border: 1px solid #f5c8c8; }

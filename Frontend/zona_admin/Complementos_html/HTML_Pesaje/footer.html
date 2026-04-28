@@ -1,0 +1,28 @@
+<!-- ====== FOOTER ====== -->
+  <footer class="admin-footer">
+    <div class="footer-inner">
+      <span>&copy; 2025 HOFLOC.SA &mdash; Sistema de Gestión Ganadera</span>
+      <span class="footer-version">v2.1.0</span>
+    </div>
+  </footer>
+  <!-- ====== /FOOTER ====== -->
+
+</div><!-- /.admin-shell -->
+
+<!-- JS al final -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+  /* Submenu toggle */
+  function toggleSubmenu(el) {
+    el.classList.toggle('open');
+    var sub = el.nextElementSibling;
+    if (sub && sub.classList.contains('nav-submenu')) {
+      sub.classList.toggle('open');
+    }
+  }
+</script>
+<script src="../js/js_pesaje/pesaje.js"></script>
+
+</body>
+</html>
