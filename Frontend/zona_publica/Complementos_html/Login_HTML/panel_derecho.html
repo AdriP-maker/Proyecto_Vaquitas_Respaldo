@@ -1,0 +1,210 @@
+<!-- Panel derecho: formulario de acceso -->
+<div class="panel-right">
+
+        <!-- Botón cerrar: regresa a Inicio.php -->
+    <a href="Inicio.php" class="btn-cerrar" title="Volver al inicio">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M1 1L13 13M13 1L1 13" stroke="#737971" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+    </a>
+
+    <h2 class="form-heading">Acceso al Sistema</h2>
+    <p class="form-subheading">Gestión Unificada</p>
+
+    <!-- Alerta de error (la genera IniciarLogin.php, la oculta Login.js tras 5s) -->
+    <?php if ($alerta): ?>
+        <div class="alert alert-login <?= $alerta['clase'] ?>" role="alert">
+            <?= $alerta['texto'] ?>
+        </div>
+    <?php endif; ?>
+
+    <!-- Formulario: envía por POST a ValidarLogin.php -->
+    <form id="form-login" action="ValidarLogin.php" method="POST" novalidate>
+
+        <!-- Campo usuario / correo -->
+        <div class="form-group">
+            <label class="form-label" for="usuario">Usuario / Correo</label>
+            <div class="input-wrapper">
+                <input
+                    type="text"
+                    id="usuario"
+                    name="usuario"
+                    placeholder="juan.perez@hofloc.com"
+                    autocomplete="username"
+                    value="<?= $usuarioGuardado ?>">
+                <span class="input-icon">
+                    <!-- Ícono persona -->
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                        <path d="M8 8C6.9 8 5.95833 7.60833 5.175 6.825C4.39167 6.04167 4 5.1 4 4C4 2.9 4.39167 1.95833 5.175 1.175C5.95833 0.391667 6.9 0 8 0C9.1 0 10.0417 0.391667 10.825 1.175C11.6083 1.95833 12 2.9 12 4C12 5.1 11.6083 6.04167 10.825 6.825C10.0417 7.60833 9.1 8 8 8ZM0 16V13.2C0 12.6333 0.145833 12.1125 0.4375 11.6375C0.729167 11.1625 1.11667 10.8 1.6 10.55C2.63333 10.0333 3.68333 9.64583 4.75 9.3875C5.81667 9.12917 6.9 9 8 9C9.1 9 10.1833 9.12917 11.25 9.3875C12.3167 9.64583 13.3667 10.0333 14.4 10.55C14.8833 10.8 15.2708 11.1625 15.5625 11.6375C15.8542 12.1125 16 12.6333 16 13.2V16H0ZM2 14H14V13.2C13.9542 12.85 13.8625 12.7 13.7708 12.55 13.65 12.4333 13.5 12.35C12.6 11.9 11.6917 11.5625 10.775 11.3375C9.85833 11.1125 8.93333 11 8 11C7.06667 11 6.14167 11.1125 5.225 11.3375C4.30833 11.5625 3.4 11.9 2.5 12.35C2.35 12.4333 2.22917 12.55 2.1375 12.7C2.04583 12.85 2 13.0167 2 13.2V14ZM8 6C9.02083 5.80417 9.4125 5.4125 9.80417 5.02083 10 4.55 10 4C10 3.45 9.80417 2.97917 9.4125 2.5875C9.02083 2.19583 8.55 2 8 2C7.45 2 6.97917 2.19583 6.5875 2.5875C6.19583 2.97917 6 3.45 6 4C6 4.55 6.19583 5.02083 6.5875 5.4125C6.97917 5.80417 7.45 6 8 6Z" fill="#737971"/>
+                    </svg>
+                </span>
+            </div>
+        </div>
+
+        <!-- Campo contraseña -->
+        <div class="form-group">
+            <label class="form-label" for="password">Contraseña</label>
+            <div class="input-wrapper">
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="••••••••"
+                    autocomplete="current-password">
+                <!-- Botón para ver/ocultar contraseña, manejado por Login.js -->
+                <span class="input-icon" id="toggle-password" style="cursor:pointer;">
+                    <!-- Ícono candado -->
+                    <svg width="16" height="21" viewBox="0 0 16 21" fill="none" aria-hidden="true">
+                        <path d="M2 21C1.45 21 0.979167 20.8042 0.5875 20.4125C0.195833 20.0208 0 19.55 0 19V9C0 8.45 0.195833 7.97917 0.5875 7.5875C0.979167 7.19583 1.45 7 2 7H3V5C3 3.61667 3.4875 2.4375 4.4625 1.4625C5.4375 0.4875 6.61667 0 8 0C9.38333 0 10.5625 0.4875 11.5375 1.4625C12.5125 2.4375 13 3.61667 13 5V7H14C14.55 7 15.0208 7.19583 15.4125 7.5875C15.8042 7.97917 16 8.45 16 9V19C16 19.55 15.8042 20.0208 15.4125 20.4125C15.0208 20.8042 14.55 21 14 21H2ZM8 16C8.55 16 9.02083 15.8042 9.4125 15.4125C9.80417 15.0208 10 14.55 10 14C10 13.45 9.80417 12.9792 9.4125 12.5875C9.02083 12.1958 8.55 12 8 12C7.45 12 6.97917 12.1958 6.5875 12.5875C6.19583 12.9792 6 13.45 6 14C6 14.55 6.19583 15.0208 6.5875 15.4125C6.97917 15.8042 7.45 16 8 16ZM5 7H11V5C11 4.16667 10.7083 3.45833 10.125 2.875C9.54167 2.29167 8.83333 2 8 2C7.16667 2 6.45833 2.29167 5.875 2.875C5.29167 3.45833 5 4.16667 5 5V7Z" fill="#737971"/>
+                    </svg>
+                </span>
+            </div>
+        </div>
+
+        <!-- Recordar sesión y link de recuperación -->
+        <div class="form-options">
+            <label class="remember-label" for="recordar">
+                <input type="checkbox" class="form-check-input" id="recordar">
+                <span class="remember-text">Recordar sesión</span>
+            </label>
+            <a href="#" class="forgot-link">¿Olvidó su contraseña?</a>
+        </div>
+
+        <!-- Botón de envío, Login.js lo desactiva al hacer submit -->
+        <button type="submit" id="btn-envio" class="btn-submit">
+            Sincronizar Acceso
+        </button>
+
+    </form>
+
+    <!-- ══════════════════════════════════════════════════
+         MODAL 1 — Ingresar correo / usuario
+         ══════════════════════════════════════════════════ -->
+    <div class="modal-overlay" id="modal-recuperar" role="dialog" aria-modal="true" aria-labelledby="modal-rec-titulo">
+
+        <div class="modal-box">
+
+            <!-- Cerrar -->
+            <button class="modal-cerrar" id="btn-cerrar-modal-1" aria-label="Cerrar">
+                <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
+                    <path d="M1 1L13 13M13 1L1 13" stroke="#737971" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+
+            <!-- Ícono -->
+            <div class="modal-icono">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M10 1C5.03 1 1 5.03 1 10s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9Zm.9 13.5H9.1v-5.4h1.8v5.4Zm0-7.2H9.1V5.5h1.8v1.8Z" fill="#17341c"/>
+                </svg>
+            </div>
+
+            <h3 class="modal-titulo" id="modal-rec-titulo">Recuperar Contraseña</h3>
+            <p class="modal-subtitulo">Ingrese su usuario o correo registrado. Le enviaremos las instrucciones de recuperación.</p>
+
+            <div class="modal-group">
+                <label class="modal-label" for="rec-usuario">Usuario / Correo</label>
+                <div class="modal-input-wrap">
+                    <input type="text" id="rec-usuario" placeholder="horacio.flores@hofloc.com" autocomplete="off">
+                </div>
+                <span class="campo-error" id="rec-error" style="display:none; font-family:'Work Sans',sans-serif; font-size:11px; color:#dc3545; margin-top:4px; padding-left:2px;"></span>
+            </div>
+
+            <button class="modal-btn-primary" id="btn-enviar-recuperar">
+                Continuar
+            </button>
+
+            <a class="modal-volver" id="volver-desde-modal-1">← Volver al inicio de sesión</a>
+
+        </div>
+    </div>
+
+
+    <!-- ══════════════════════════════════════════════════
+         MODAL 2 — Cambiar contraseña
+         ══════════════════════════════════════════════════ -->
+    <div class="modal-overlay" id="modal-nueva-pass" role="dialog" aria-modal="true" aria-labelledby="modal-np-titulo">
+
+        <div class="modal-box">
+
+            <!-- Cerrar -->
+            <button class="modal-cerrar" id="btn-cerrar-modal-2" aria-label="Cerrar">
+                <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
+                    <path d="M1 1L13 13M13 1L1 13" stroke="#737971" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+
+            <!-- Ícono -->
+            <div class="modal-icono">
+                <svg width="20" height="20" viewBox="0 0 16 21" fill="none" aria-hidden="true">
+                    <path d="M2 21C1.45 21 0.98 20.8 0.59 20.41 0.2 20.02 0 19.55 0 19V9c0-.55.2-1.02.59-1.41C.98 7.2 1.45 7 2 7h1V5c0-1.38.49-2.56 1.46-3.54C5.44.49 6.62 0 8 0c1.38 0 2.56.49 3.54 1.46C12.51 2.44 13 3.62 13 5v2h1c.55 0 1.02.2 1.41.59.39.39.59.86.59 1.41v10c0 .55-.2 1.02-.59 1.41-.39.39-.86.59-1.41.59H2Zm6-5c.55 0 1.02-.2 1.41-.59.39-.39.59-.86.59-1.41 0-.55-.2-1.02-.59-1.41C9.02 12.2 8.55 12 8 12c-.55 0-1.02.2-1.41.59C6.2 12.98 6 13.45 6 14c0 .55.2 1.02.59 1.41C6.98 15.8 7.45 16 8 16ZM5 7h6V5c0-.83-.29-1.54-.88-2.13C9.54 2.29 8.83 2 8 2c-.83 0-1.54.29-2.13.88C5.29 3.46 5 4.17 5 5v2Z" fill="#17341c"/>
+                </svg>
+            </div>
+
+            <h3 class="modal-titulo" id="modal-np-titulo">Nueva Contraseña</h3>
+            <p class="modal-subtitulo">Cree una contraseña segura para su cuenta. Debe tener al menos 8 caracteres.</p>
+
+            <div class="modal-alerta-ok" id="np-alerta-ok" style="display:none;">
+                ✓ Contraseña actualizada correctamente. Redirigiendo…
+            </div>
+
+            <div id="np-form-wrap">
+                <div class="modal-group">
+                    <label class="modal-label" for="np-pass1">Nueva Contraseña</label>
+                    <div class="modal-input-wrap" style="padding-right:40px;">
+                        <input type="password" id="np-pass1" placeholder="••••••••" autocomplete="new-password">
+                        <button type="button" class="modal-toggle-pass" id="toggle-np1" tabindex="-1" aria-label="Ver contraseña">
+                            <svg width="16" height="12" viewBox="0 0 20 14" fill="none">
+                                <path d="M10 0C5.5 0 1.73 2.61.08 6.4a.97.97 0 0 0 0 .78C1.73 11.38 5.5 14 10 14s8.27-2.61 9.92-6.4a.97.97 0 0 0 0-.78C18.27 2.61 14.5 0 10 0Zm0 11.67c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5Zm0-8a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z" fill="#737971"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <span class="campo-error" id="np-error1" style="display:none; font-family:'Work Sans',sans-serif; font-size:11px; color:#dc3545; margin-top:4px; padding-left:2px;"></span>
+                </div>
+
+                <div class="modal-group">
+                    <label class="modal-label" for="np-pass2">Confirmar Contraseña</label>
+                    <div class="modal-input-wrap" style="padding-right:40px;">
+                        <input type="password" id="np-pass2" placeholder="••••••••" autocomplete="new-password">
+                        <button type="button" class="modal-toggle-pass" id="toggle-np2" tabindex="-1" aria-label="Ver confirmación">
+                            <svg width="16" height="12" viewBox="0 0 20 14" fill="none">
+                                <path d="M10 0C5.5 0 1.73 2.61.08 6.4a.97.97 0 0 0 0 .78C1.73 11.38 5.5 14 10 14s8.27-2.61 9.92-6.4a.97.97 0 0 0 0-.78C18.27 2.61 14.5 0 10 0Zm0 11.67c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5Zm0-8a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z" fill="#737971"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <span class="campo-error" id="np-error2" style="display:none; font-family:'Work Sans',sans-serif; font-size:11px; color:#dc3545; margin-top:4px; padding-left:2px;"></span>
+                </div>
+
+                <button class="modal-btn-primary" id="btn-guardar-pass">
+                    Guardar Contraseña
+                </button>
+            </div>
+
+            <a class="modal-volver" id="volver-desde-modal-2">← Volver al inicio de sesión</a>
+
+        </div>
+    </div>
+
+
+    <!-- Aviso legal y badges de seguridad -->
+    <div class="card-footer-inner">
+        <p class="restricted-text">
+            Este sistema está restringido a personal autorizado de<br>
+            <span class="brand-bold">HOFLOC, S.A. El Archivo Agrario.</span>
+        </p>
+        <div class="badges">
+            <span class="badge-security">
+                <svg width="9.33" height="11.67" viewBox="0 0 9.33333 11.6667" fill="none" aria-hidden="true">
+                    <path d="M4.05417 7.90417L7.35 4.60833L6.51875 3.77708L4.05417 6.24167L2.82917 5.01667L1.99792 5.84792L4.05417 7.90417ZM4.66667 11.6667C3.31528 11.3264 2.19965 10.551 1.31979 9.34062C0.439931 8.13021 0 6.78611 0 5.30833V1.75L4.66667 0L9.33333 1.75V5.30833C9.33333 6.78611 8.8934 8.13021 8.01354 9.34062C7.13368 10.551 6.01806 11.3264 4.66667 11.6667ZM4.66667 10.4417C5.67778 10.1208 6.51389 9.47917 7.175 8.51667C7.83611 7.55417 8.16667 6.48472 8.16667 5.30833V2.55208L4.66667 1.23958L1.16667 2.55208V5.30833C1.16667 6.48472 1.49722 7.55417 2.15833 8.51667C2.81944 9.47917 3.65556 10.1208 4.66667 10.4417Z" fill="#CCAC87"/>
+                </svg>
+                Encriptación 256-bit
+            </span>
+            <span class="badge-security">
+                <svg width="10.5" height="11.08" viewBox="0 0 10.5 11.0833" fill="none" aria-hidden="true">
+                    <path d="M0 11.0833V9.91667H7V11.0833H0ZM3.29583 8.25417L0 4.95833L1.225 3.70417L4.55 7L3.29583 8.25417ZM7 4.55L3.70417 1.225L4.95833 0L8.25417 3.29583L7 4.55ZM9.68333 10.5L2.07083 2.8875L2.8875 2.07083L10.5 9.68333L9.68333 10.5Z" fill="#CCAC87"/>
+                </svg>
+                Legal
+            </span>
+        </div>
+    </div>
+
+</div>
