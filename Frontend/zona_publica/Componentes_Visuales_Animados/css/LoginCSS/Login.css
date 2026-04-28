@@ -1,0 +1,639 @@
+/* ============================================================
+   Login.css — HOFLOC, S.A. | Archivo Agrario
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,700;1,400&family=Newsreader:ital,wght@0,700;1,400;1,700&display=swap');
+
+/* ──────────────── RESET & BASE ──────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Work Sans', sans-serif;
+  background-color: #fcf9f0;
+  padding: 40px 16px;
+}
+
+/* ──────────────── FONDO ──────────────── */
+.page-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.page-bg img {
+  position: absolute;
+  width: 100%;
+  height: 125%;
+  top: -12.5%;
+  left: 0;
+  object-fit: cover;
+}
+
+.page-bg .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(28, 28, 23, 0.4);
+}
+
+/* ──────────────── TARJETA PRINCIPAL ──────────────── */
+.login-card {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  max-width: 1024px;
+  height: 721px;
+  border-radius: 4px;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  background: rgba(252, 249, 240, 0.8);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* ──────────────── PANEL IZQUIERDO (branding) ──────────────── */
+.panel-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 48px;
+}
+
+.brand-name {
+  font-family: 'Newsreader', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 30px;
+  letter-spacing: -0.75px;
+  line-height: 36px;
+  color: #17341c;
+}
+
+.brand-divider {
+  width: 48px;
+  height: 1px;
+  background: rgba(23, 52, 28, 0.2);
+  margin: 24px 0;
+}
+
+.tagline {
+  font-family: 'Newsreader', serif;
+  font-weight: 700;
+  font-size: 48px;
+  letter-spacing: -2.4px;
+  line-height: 60px;
+  color: #1c1c17;
+  margin-bottom: 24px;
+}
+
+.description {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 29.25px;
+  color: #424841;
+  max-width: 320px;
+}
+
+/* ──────────────── PANEL DERECHO (formulario) ──────────────── */
+.panel-right {
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 64px;
+}
+
+.form-heading {
+  font-family: 'Newsreader', serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 36px;
+  color: #17341c;
+  margin-bottom: 8px;
+}
+
+.form-subheading {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #737971;
+  margin-bottom: 40px;
+}
+
+/* ──────────────── CAMPOS DEL FORMULARIO ──────────────── */
+.form-group {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.form-label {
+  display: block;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #424841;
+  margin-bottom: 4px;
+}
+
+.input-wrapper {
+  position: relative;
+  background: #ebe8df;
+  border-bottom: 2px solid rgba(115, 121, 113, 0.3);
+  transition: border-color 0.2s;
+}
+
+.input-wrapper:focus-within {
+  border-color: #17341c;
+}
+
+.input-wrapper input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #424841;
+  padding: 14px 40px 17px 12px;
+}
+
+.input-wrapper input::placeholder {
+  color: rgba(115, 121, 113, 0.5);
+}
+
+.input-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.5;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+/* ──────────────── ALERTAS DE ERROR ──────────────── */
+.alert-login {
+  border-radius: 4px;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 13px;
+  padding: 10px 14px;
+  margin-bottom: 20px;
+}
+
+/* ──────────────── RECORDAR / OLVIDÓ ──────────────── */
+.form-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  margin-bottom: 32px;
+}
+
+.remember-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+.remember-label .form-check-input {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #fcf9f0;
+  border-radius: 3px;
+  border: 1.5px solid rgba(115, 121, 113, 0.5);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.15s, border-color 0.15s;
+  position: relative;
+}
+
+.remember-label .form-check-input:checked {
+  background: #17341c;
+  border-color: #17341c;
+}
+
+.remember-label .form-check-input:checked::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 5px;
+  height: 9px;
+  border: 2px solid #ffffff;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+
+.remember-text {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: #424841;
+}
+
+.forgot-link {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  color: #17341c;
+  text-decoration: none;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+  color: #17341c;
+}
+
+/* ──────────────── BOTÓN SUBMIT ──────────────── */
+.btn-submit {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(172.29deg, #17341c 0%, #2d4b31 100%);
+  border: none;
+  border-radius: 4px;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+              0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 48px;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.btn-submit:hover {
+  opacity: 0.92;
+}
+
+.btn-submit:active {
+  transform: scale(0.99);
+}
+
+/* ──────────────── FOOTER DENTRO DE LA TARJETA ──────────────── */
+.card-footer-inner {
+  border-top: 1px solid rgba(194, 200, 191, 0.15);
+  padding-top: 32px;
+  text-align: center;
+  background: transparent;
+}
+
+.restricted-text {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 19.5px;
+  color: #424841;
+  margin-bottom: 24px;
+}
+
+.restricted-text .brand-bold {
+  font-family: 'Newsreader', serif;
+  font-weight: 700;
+  font-style: italic;
+  color: #17341c;
+}
+
+.badges {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.badge-security {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  background: rgba(87, 64, 35, 0.1);
+  border-radius: 12px;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+  color: #ccac87;
+}
+
+/* ──────────────── FOOTER DE PÁGINA ──────────────── */
+.page-footer {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 48px;
+  margin-top: 8px;
+}
+
+.footer-copy,
+.footer-links a {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+  color: rgba(28, 28, 23, 0.4);
+  text-decoration: none;
+}
+
+.footer-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links a:hover {
+  color: rgba(28, 28, 23, 0.7);
+}
+
+/* ──────────────── ERRORES DE VALIDACIÓN (Login.js) ──────────────── */
+.input-wrapper.input-error,
+.input-wrapper:has(.input-error) {
+    border-color: #dc3545;
+}
+
+input.input-error {
+    color: #dc3545;
+}
+
+.campo-error {
+    display: block;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 11px;
+    color: #dc3545;
+    margin-top: 4px;
+    padding-left: 2px;
+}
+
+/* ──────────────── BOTÓN CERRAR (X) ──────────────── */
+.btn-cerrar {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: transparent;
+  transition: background 0.15s;
+  text-decoration: none;
+}
+
+.btn-cerrar:hover {
+  background: rgba(115, 121, 113, 0.12);
+}
+
+.btn-cerrar:hover path {
+  stroke: #17341c;
+}
+
+/* ══════════════════════════════════════════════════════
+ *  MODALES — RECUPERAR CONTRASEÑA
+ * ══════════════════════════════════════════════════════ */
+
+/* Fondo oscuro detrás del modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(23, 52, 28, 0.45);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.modal-overlay.activo {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Caja del modal */
+.modal-box {
+  background: #ffffff;
+  width: 100%;
+  max-width: 400px;
+  padding: 40px 44px 36px;
+  position: relative;
+  transform: translateY(16px) scale(0.98);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  opacity: 0;
+}
+
+.modal-overlay.activo .modal-box {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* Icono decorativo superior */
+.modal-icono {
+  width: 44px;
+  height: 44px;
+  background: #ebe8df;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.modal-titulo {
+  font-family: 'Newsreader', serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 28px;
+  color: #17341c;
+  margin-bottom: 6px;
+}
+
+.modal-subtitulo {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  color: #737971;
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+/* Campos dentro del modal — misma estética que Login */
+.modal-group {
+  margin-bottom: 20px;
+}
+
+.modal-label {
+  display: block;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #424841;
+  margin-bottom: 4px;
+}
+
+.modal-input-wrap {
+  position: relative;
+  background: #ebe8df;
+  border-bottom: 2px solid rgba(115, 121, 113, 0.3);
+  transition: border-color 0.2s;
+}
+
+.modal-input-wrap:focus-within {
+  border-color: #17341c;
+}
+
+.modal-input-wrap input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: #424841;
+  padding: 13px 12px 15px;
+}
+
+.modal-input-wrap input::placeholder {
+  color: rgba(115, 121, 113, 0.5);
+}
+
+/* Botón primario del modal */
+.modal-btn-primary {
+  width: 100%;
+  background: #17341c;
+  color: #ffffff;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  padding: 15px;
+  transition: background 0.18s, transform 0.1s;
+  margin-top: 4px;
+}
+
+.modal-btn-primary:hover {
+  background: #1e4526;
+}
+
+.modal-btn-primary:active {
+  transform: scale(0.99);
+}
+
+/* Botón volver (link) */
+.modal-volver {
+  display: block;
+  text-align: center;
+  margin-top: 16px;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #737971;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.modal-volver:hover {
+  color: #17341c;
+}
+
+/* Botón X del modal */
+.modal-cerrar {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s;
+  padding: 0;
+}
+
+.modal-cerrar:hover {
+  background: rgba(115, 121, 113, 0.12);
+}
+
+/* Mensaje de éxito dentro del modal (paso 1 → 2) */
+.modal-paso {
+  display: none;
+}
+
+.modal-paso.visible {
+  display: block;
+}
+
+/* Alerta de éxito pequeña */
+.modal-alerta-ok {
+  background: #edf5ee;
+  border-left: 3px solid #17341c;
+  padding: 10px 14px;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 12px;
+  color: #17341c;
+  margin-bottom: 20px;
+}
+
+/* Input toggle pass en modal */
+.modal-toggle-pass {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.45;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.modal-toggle-pass:hover {
+  opacity: 0.8;
+}
