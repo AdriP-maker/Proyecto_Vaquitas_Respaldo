@@ -260,6 +260,12 @@
   align-items: center;
 }
  
+.card-grafica.oculta {
+  display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 /* Contenedor del canvas con altura FIJA — evita que se estire */
 .modal-det-grafica-wrap {
   flex: 1;

@@ -1,161 +1,293 @@
-<!-- Card 1 -->
-<div class="ganado-card">
-  <img src="../Componentes_Visuales_Animados/img/ImgInicio/Vaca_Alb.jpg" alt="Vaca 1">
-  <div class="ganado-info">
-    <h4>Genética</h4>
-    <div class="ganado-grid-datos">
-      <div><span class="dato-label">Peso</span><span class="dato-valor">300kg</span></div>
-      <div><span class="dato-label">Producción</span><span class="dato-valor">30LTS</span></div>
-      <div><span class="dato-label">Número/MIDA</span><span class="dato-valor">0F3GHA1</span></div>
-      <div><span class="dato-label">Número/finca</span><span class="dato-valor">88</span></div>
-    </div>
-    <div class="ganado-botones">
-      <a href="#" class="btn-reservar"
-         onclick="abrirModal(this); return false;"
-         data-nombre="Genética"
-         data-finca="88"
-         data-img="../Componentes_Visuales_Animados/img/ImgInicio/Vaca_Alb.jpg">
-         Me Interesa
-      </a>
-      <a href="#" class="btn-detalles">Ver detalles</a>
-    </div>
-  </div>
-</div>
+    <section class="ganado" id="ganado">
+      <div class="ganado-container">
+        <h2 class="ganado-titulo">GANADO DISPONIBLE</h2>
+        <a href="#" class="ganado-link">Ver catálogo completo</a>
+        <!-- Carrusel de cards -->
+        <div class="ganado-wrapper">
+          <button class="ganado-btn prev" id="ganadoPrev">&#8249;</button>
+          <div class="ganado-track-outer">
+            <div class="ganado-track" id="ganadoTrack">
 
-<!-- Card 2 -->
-<div class="ganado-card">
-  <img src="../Componentes_Visuales_Animados/img/ImgInicio/Vaca_HR.jpg" alt="Vaca 2">
-  <div class="ganado-info">
-    <h4>Genética</h4>
-    <div class="ganado-grid-datos">
-      <div><span class="dato-label">Peso</span><span class="dato-valor">300kg</span></div>
-      <div><span class="dato-label">Producción</span><span class="dato-valor">30LTS</span></div>
-      <div><span class="dato-label">Número/MIDA</span><span class="dato-valor">0F3GHA1</span></div>
-      <div><span class="dato-label">Número/finca</span><span class="dato-valor">88</span></div>
-    </div>
-    <div class="ganado-botones">
-      <a href="#" class="btn-reservar"
-         onclick="abrirModal(this); return false;"
-         data-nombre="Genética"
-         data-finca="88"
-         data-img="../Componentes_Visuales_Animados/img/ImgInicio/Vaca_HR.jpg">
-         Me Interesa
-      </a>
-      <a href="#" class="btn-detalles"
-        onclick="abrirDetalles(this); return false;"
-        data-img="../Componentes_Visuales_Animados/img/ImgInicio/Vaca_HR.jpg"
-        data-numero="#10017"
-        data-raza="Holstein Roja"
-        data-edad="3 años"
-        data-peso="550 kg"
-        data-produccion="22 L / día"
-        data-vacunas="Al día. Certificado"
-        data-padre-num="#12237"
-        data-padre-raza="Torrer"
-        data-padre-edad="7 años"
-        data-padre-peso="550 kg"
-        data-padre-estado="Activo"
-        data-madre-num="#37727"
-        data-madre-raza="Torrer"
-        data-madre-edad="6 años"
-        data-madre-peso="550 kg"
-        data-madre-estado="Activo"
-        data-cria-num="#10017"
-        data-cria-raza="Holstein Roja">
-        Ver detalles
-      </a>
-    </div>
-  </div>
-</div>
+            <!-- Card 1 -->
+            <div class="ganado-card">
+              <img src="../Componentes_Visuales_Animados/img/ImgInicio/Vaca_Alb.jpg" alt="Vaca 1">
+              <div class="ganado-info">
+                <h4>Genética</h4>
+                <div class="ganado-grid-datos">
+                  <div><span class="dato-label">Peso</span><span class="dato-valor">300kg</span></div>
+                  <div><span class="dato-label">Producción</span><span class="dato-valor">30LTS</span></div>
+                  <div><span class="dato-label">Número/MIDA</span><span class="dato-valor">0F3GHA1</span></div>
+                  <div><span class="dato-label">Número/finca</span><span class="dato-valor">88</span></div>
+                </div>
+                <div class="ganado-botones">
+                  <a href="#" class="btn-reservar"
+                    onclick="abrirModal(this); return false;"
+                    data-nombre="Genética"
+                    data-finca="88"
+                    data-img="../Componentes_Visuales_Animados/img/ImgInicio/Vaca_Alb.jpg">
+                    Me Interesa
+                  </a>
+                    <a href="#" class="btn-detalles"
+                    onclick="abrirDetalles(this); return false;"
+                    data-img="../Componentes_Visuales_Animados/img/ImgInicio/Vaca_Alb.jpg"
+                    data-numero="#10999"
+                    data-raza="Albera"
+                    data-edad="4 años"
+                    data-peso="500 kg"
+                    data-produccion="20 L / día"
+                    data-vacunas="Al día. Certificado"
+                    data-padre-num="#18867"
+                    data-padre-raza="Girolando"
+                    data-padre-edad="7 años"
+                    data-padre-peso="560 kg"
+                    data-padre-estado="Activo"
+                    data-madre-num="#31007"
+                    data-madre-raza="Holstein"
+                    data-madre-edad="6 años"
+                    data-madre-peso="540 kg"
+                    data-madre-estado="Activo"
+                    data-cria-num="#10999"
+                    data-cria-raza="Albera">
+                    Ver detalles
+                  </a>
+                </div>
+              </div>
+            </div>
 
-<!-- Card 3 Toro-->
-<div class="ganado-card">
-  <img src="../Componentes_Visuales_Animados/img/ImgInicio/Toro_Abi.jpg" alt="Vaca 3">
-  <div class="ganado-info">
-    <h4>Genética</h4>
-    <div class="ganado-grid-datos">
-      <div><span class="dato-label">Peso</span><span class="dato-valor">300kg</span></div>
-      <div><span class="dato-label">Número/MIDA</span><span class="dato-valor">0F3GHA1</span></div>
-      <div><span class="dato-label">Número/finca</span><span class="dato-valor">88</span></div>
-    </div>
-    <div class="ganado-botones">
-      <a href="#" class="btn-reservar"
-         onclick="abrirModal(this); return false;"
-         data-nombre="Genética"
-         data-finca="88"
-         data-img="../Componentes_Visuales_Animados/img/ImgInicio/Toro_Abi.jpg">
-         Me Interesa
-      </a>
-      <a href="#" class="btn-detalles">Ver detalles</a>
-    </div>
-  </div>
-</div>
+            <!-- Card 2 -->
+            <div class="ganado-card">
+              <img src="../Componentes_Visuales_Animados/img/ImgInicio/Vaca_HR.jpg" alt="Vaca 2">
+              <div class="ganado-info">
+                <h4>Genética</h4>
+                <div class="ganado-grid-datos">
+                  <div><span class="dato-label">Peso</span><span class="dato-valor">300kg</span></div>
+                  <div><span class="dato-label">Producción</span><span class="dato-valor">30LTS</span></div>
+                  <div><span class="dato-label">Número/MIDA</span><span class="dato-valor">0F3GHA1</span></div>
+                  <div><span class="dato-label">Número/finca</span><span class="dato-valor">88</span></div>
+                </div>
+                <div class="ganado-botones">
+                  <a href="#" class="btn-reservar"
+                    onclick="abrirModal(this); return false;"
+                    data-nombre="Genética"
+                    data-finca="88"
+                    data-img="../Componentes_Visuales_Animados/img/ImgInicio/Vaca_HR.jpg">
+                    Me Interesa
+                  </a>
+                  <a href="#" class="btn-detalles"
+                    onclick="abrirDetalles(this); return false;"
+                    data-img="../Componentes_Visuales_Animados/img/ImgInicio/Vaca_HR.jpg"
+                    data-numero="#10017"
+                    data-raza="Holstein Roja"
+                    data-edad="3 años"
+                    data-peso="550 kg"
+                    data-produccion="22 L / día"
+                    data-vacunas="Al día. Certificado"
+                    data-padre-num="#12237"
+                    data-padre-raza="Torrer"
+                    data-padre-edad="7 años"
+                    data-padre-peso="550 kg"
+                    data-padre-estado="Activo"
+                    data-madre-num="#37727"
+                    data-madre-raza="Torrer"
+                    data-madre-edad="6 años"
+                    data-madre-peso="550 kg"
+                    data-madre-estado="Activo"
+                    data-cria-num="#10017"
+                    data-cria-raza="Holstein Roja">
+                    Ver detalles
+                  </a>
+                </div>
+              </div>
+            </div>
 
-<!-- Card 4 Toro-->
-<div class="ganado-card">
-  <img src="../Componentes_Visuales_Animados/img/ImgInicio/Toro_Giro.jpg" alt="Vaca 4">
-  <div class="ganado-info">
-    <h4>Genética</h4>
-    <div class="ganado-grid-datos">
-      <div><span class="dato-label">Peso</span><span class="dato-valor">300kg</span></div>
-      <div><span class="dato-label">Número/MIDA</span><span class="dato-valor">0F3GHA1</span></div>
-      <div><span class="dato-label">Número/finca</span><span class="dato-valor">88</span></div>
-    </div>
-    <div class="ganado-botones">
-      <a href="#" class="btn-reservar"
-         onclick="abrirModal(this); return false;"
-         data-nombre="Genética"
-         data-finca="88"
-         data-img="../Componentes_Visuales_Animados/img/ImgInicio/Toro_Giro.jpg">
-         Me Interesa
-      </a>
-      <a href="#" class="btn-detalles">Ver detalles</a>
-    </div>
-  </div>
-</div>
+            <!-- Card 3 Toro-->
+            <div class="ganado-card">
+              <img src="../Componentes_Visuales_Animados/img/ImgInicio/Toro_Abi.jpg" alt="Vaca 3">
+              <div class="ganado-info">
+                <h4>Genética</h4>
+                <div class="ganado-grid-datos">
+                  <div><span class="dato-label">Peso</span><span class="dato-valor">300kg</span></div>
+                  <div><span class="dato-label">Número/MIDA</span><span class="dato-valor">0F3GHA1</span></div>
+                  <div><span class="dato-label">Número/finca</span><span class="dato-valor">88</span></div>
+                </div>
+                <div class="ganado-botones">
+                  <a href="#" class="btn-reservar"
+                    onclick="abrirModal(this); return false;"
+                    data-nombre="Genética"
+                    data-finca="88"
+                    data-img="../Componentes_Visuales_Animados/img/ImgInicio/Toro_Abi.jpg">
+                    Me Interesa
+                  </a>
+                  <a href="#" class="btn-detalles"
+                    onclick="abrirDetalles(this); return false;"
+                    data-img="../Componentes_Visuales_Animados/img/ImgInicio/Toro_Abi.jpg"
+                    data-numero="#11088"
+                    data-raza="Abigar"
+                    data-edad="5 años"
+                    data-peso="600 kg"
+                    data-produccion="N/A"
+                    data-vacunas="Al día. Certificado"
+                    data-padre-num="#67554"
+                    data-padre-raza="Abigar"
+                    data-padre-edad="8 años"
+                    data-padre-peso="590 kg"
+                    data-padre-estado="Activo"
+                    data-madre-num="#64449"
+                    data-madre-raza="Holstein"
+                    data-madre-edad="6 años"
+                    data-madre-peso="575 kg"
+                    data-madre-estado="Activo"
+                    data-cria-num="#11088"
+                    data-cria-raza="Abigar">
+                    Ver detalles
+                  </a>
+                </div>
+              </div>
+            </div>
 
-<!-- Card 5 Ternero -->
-<div class="ganado-card">
-  <img src="../Componentes_Visuales_Animados/img/ImgInicio/Ternero_Hol.jpg" alt="Vaca 5">
-  <div class="ganado-info">
-    <h4>Genética</h4>
-    <div class="ganado-grid-datos">
-      <div><span class="dato-label">Peso</span><span class="dato-valor">300kg</span></div>
-      <div><span class="dato-label">Número/MIDA</span><span class="dato-valor">0F3GHA1</span></div>
-      <div><span class="dato-label">Número/finca</span><span class="dato-valor">88</span></div>
-    </div>
-    <div class="ganado-botones">
-      <a href="#" class="btn-reservar"
-         onclick="abrirModal(this); return false;"
-         data-nombre="Genética"
-         data-finca="88"
-         data-img="../Componentes_Visuales_Animados/img/ImgInicio/Ternero_Hol.jpg">
-         Me Interesa
-      </a>
-      <a href="#" class="btn-detalles">Ver detalles</a>
-    </div>
-  </div>
-</div>
+            <!-- Card 4 Toro-->
+            <div class="ganado-card">
+              <img src="../Componentes_Visuales_Animados/img/ImgInicio/Toro_Giro.jpg" alt="Vaca 4">
+              <div class="ganado-info">
+                <h4>Genética</h4>
+                <div class="ganado-grid-datos">
+                  <div><span class="dato-label">Peso</span><span class="dato-valor">300kg</span></div>
+                  <div><span class="dato-label">Número/MIDA</span><span class="dato-valor">0F3GHA1</span></div>
+                  <div><span class="dato-label">Número/finca</span><span class="dato-valor">88</span></div>
+                </div>
+                <div class="ganado-botones">
+                  <a href="#" class="btn-reservar"
+                    onclick="abrirModal(this); return false;"
+                    data-nombre="Genética"
+                    data-finca="88"
+                    data-img="../Componentes_Visuales_Animados/img/ImgInicio/Toro_Giro.jpg">
+                    Me Interesa
+                  </a>
+                   <a href="#" class="btn-detalles"
+                    onclick="abrirDetalles(this); return false;"
+                    data-img="../Componentes_Visuales_Animados/img/ImgInicio/Toro_Giro.jpg"
+                    data-numero="#17552"
+                    data-raza="Girolando"
+                    data-edad="3 años"
+                    data-peso="500 kg"
+                    data-produccion="N/A"
+                    data-vacunas="Al día. Certificado"
+                    data-padre-num="#67904"
+                    data-padre-raza="Abigar"
+                    data-padre-edad="6 años"
+                    data-padre-peso="560 kg"
+                    data-padre-estado="Activo"
+                    data-madre-num="#61209"
+                    data-madre-raza="Albera"
+                    data-madre-edad="6 años"
+                    data-madre-peso="505 kg"
+                    data-madre-estado="Activo"
+                    data-cria-num="#17552"
+                    data-cria-raza="Girolando">
+                    Ver detalles
+                  </a>
+                </div>
+              </div>
+            </div>
 
-<!-- Card 6 Ternero-->
-<div class="ganado-card">
-  <img src="../Componentes_Visuales_Animados/img/ImgInicio/Ternero_Bra.jpg" alt="Vaca 6">
-  <div class="ganado-info">
-    <h4>Genética</h4>
-    <div class="ganado-grid-datos">
-      <div><span class="dato-label">Peso</span><span class="dato-valor">300kg</span></div>
-      <div><span class="dato-label">Número/MIDA</span><span class="dato-valor">0F3GHA1</span></div>
-      <div><span class="dato-label">Número/finca</span><span class="dato-valor">88</span></div>
-    </div>
-    <div class="ganado-botones">
-      <a href="#" class="btn-reservar"
-         onclick="abrirModal(this); return false;"
-         data-nombre="Genética"
-         data-finca="88"
-         data-img="../Componentes_Visuales_Animados/img/ImgInicio/Ternero_Bra.jpg">
-         Me Interesa
-      </a>
-      <a href="#" class="btn-detalles">Ver detalles</a>
-    </div>
-  </div>
-</div>
+            <!-- Card 5 Ternero -->
+            <div class="ganado-card">
+              <img src="../Componentes_Visuales_Animados/img/ImgInicio/Ternero_Hol.jpg" alt="Vaca 5">
+              <div class="ganado-info">
+                <h4>Genética</h4>
+                <div class="ganado-grid-datos">
+                  <div><span class="dato-label">Peso</span><span class="dato-valor">300kg</span></div>
+                  <div><span class="dato-label">Número/MIDA</span><span class="dato-valor">0F3GHA1</span></div>
+                  <div><span class="dato-label">Número/finca</span><span class="dato-valor">88</span></div>
+                </div>
+                <div class="ganado-botones">
+                  <a href="#" class="btn-reservar"
+                    onclick="abrirModal(this); return false;"
+                    data-nombre="Genética"
+                    data-finca="88"
+                    data-img="../Componentes_Visuales_Animados/img/ImgInicio/Ternero_Hol.jpg">
+                    Me Interesa
+                  </a>
+                    <a href="#" class="btn-detalles"
+                    onclick="abrirDetalles(this); return false;"
+                    data-img="../Componentes_Visuales_Animados/img/ImgInicio/Ternero_Hol.jpg"
+                    data-numero="#70023"
+                    data-raza="Holstein"
+                    data-edad="6 meses"
+                    data-peso="80 kg"
+                    data-produccion="N/A"
+                    data-vacunas="Al día. Certificado"
+                    data-padre-num="#11356"
+                    data-padre-raza="Holstein"
+                    data-padre-edad="5 años"
+                    data-padre-peso="500 kg"
+                    data-padre-estado="Activo"
+                    data-madre-num="#67049"
+                    data-madre-raza="Albera"
+                    data-madre-edad="6 años"
+                    data-madre-peso="575 kg"
+                    data-madre-estado="Activo"
+                    data-cria-num="#70023"
+                    data-cria-raza="Holstein">
+                    Ver detalles
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 6 Ternero-->
+            <div class="ganado-card">
+              <img src="../Componentes_Visuales_Animados/img/ImgInicio/Ternero_Bra.jpg" alt="Vaca 6">
+              <div class="ganado-info">
+                <h4>Genética</h4>
+                <div class="ganado-grid-datos">
+                  <div><span class="dato-label">Peso</span><span class="dato-valor">300kg</span></div>
+                  <div><span class="dato-label">Número/MIDA</span><span class="dato-valor">0F3GHA1</span></div>
+                  <div><span class="dato-label">Número/finca</span><span class="dato-valor">88</span></div>
+                </div>
+                <div class="ganado-botones">
+                  <a href="#" class="btn-reservar"
+                    onclick="abrirModal(this); return false;"
+                    data-nombre="Genética"
+                    data-finca="88"
+                    data-img="../Componentes_Visuales_Animados/img/ImgInicio/Ternero_Bra.jpg">
+                    Me Interesa
+                  </a>
+                    <a href="#" class="btn-detalles"
+                    onclick="abrirDetalles(this); return false;"
+                    data-img="../Componentes_Visuales_Animados/img/ImgInicio/Ternero_Bra.jpg"
+                    data-numero="#20087"
+                    data-raza="Brahaman"
+                    data-edad="8 meses"
+                    data-peso="85 kg"
+                    data-produccion="N/A"
+                    data-vacunas="Al día. Certificado"
+                    data-padre-num="#78821"
+                    data-padre-raza="Brahaman"
+                    data-padre-edad="6 años"
+                    data-padre-peso="600 kg"
+                    data-padre-estado="Activo"
+                    data-madre-num="#56990"
+                    data-madre-raza="Holstein"
+                    data-madre-edad="6 años"
+                    data-madre-peso="500 kg"
+                    data-madre-estado="Activo"
+                    data-cria-num="#20087"
+                    data-cria-raza="Brahaman">
+                    Ver detalles
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- /ganado-track -->
+          </div><!-- /ganado-track-outer -->
+          <button class="ganado-btn next" id="ganadoNext">&#8250;</button>
+        </div><!-- /ganado-wrapper -->
+        <!-- Solo 2 dots, uno por grupo -->
+        <div class="ganado-dots" id="ganadoDots">
+          <button class="gdot active" data-index="0"></button>
+          <button class="gdot" data-index="3"></button>
+        </div>
+      </div>
+    </section>

@@ -52,7 +52,7 @@ document.getElementById('btnCorreo').addEventListener('click', () => {
 // --- Modal Ver Detalles ---
 const modalDetallesOverlay = document.getElementById('modalDetallesOverlay');
 let graficaInstance = null;
-
+ 
 function abrirDetalles(btn) {
   const img        = btn.dataset.img;
   const numero     = btn.dataset.numero;
@@ -61,35 +61,56 @@ function abrirDetalles(btn) {
   const peso       = btn.dataset.peso;
   const produccion = btn.dataset.produccion;
   const vacunas    = btn.dataset.vacunas;
-
-  document.getElementById('modalDetImg').src        = img;
-  document.getElementById('detNumero').textContent  = numero;
-  document.getElementById('detRaza').textContent    = raza;
-  document.getElementById('detEdad').textContent    = edad;
-  document.getElementById('detPeso').textContent    = peso;
-  document.getElementById('detProduccion').textContent = produccion;
-  document.getElementById('detVacunas').textContent = vacunas;
-
+ 
+  document.getElementById('modalDetImg').src           = img;
+  document.getElementById('detNumero').textContent     = numero;
+  document.getElementById('detRaza').textContent       = raza;
+  document.getElementById('detEdad').textContent       = edad;
+  document.getElementById('detPeso').textContent       = peso;
+  document.getElementById('detVacunas').textContent    = vacunas;
+ 
   // Progenitores
   document.getElementById('detPadreNum').textContent    = btn.dataset.padreNum;
   document.getElementById('detPadreRaza').textContent   = btn.dataset.padreRaza;
   document.getElementById('detPadreEdad').textContent   = btn.dataset.padreEdad;
   document.getElementById('detPadrePeso').textContent   = btn.dataset.padrePeso;
   document.getElementById('detPadreEstado').textContent = btn.dataset.padreEstado;
-
+ 
   document.getElementById('detMadreNum').textContent    = btn.dataset.madreNum;
   document.getElementById('detMadreRaza').textContent   = btn.dataset.madreRaza;
   document.getElementById('detMadreEdad').textContent   = btn.dataset.madreEdad;
   document.getElementById('detMadrePeso').textContent   = btn.dataset.madrePeso;
   document.getElementById('detMadreEstado').textContent = btn.dataset.madreEstado;
-
-  document.getElementById('detCriaNum').textContent  = btn.dataset.criaNum;
-  document.getElementById('detCriaRaza').textContent = btn.dataset.criaRaza;
-
+ 
+  document.getElementById('detCriaNum').textContent    = btn.dataset.criaNum;
+  document.getElementById('detCriaRaza').textContent   = btn.dataset.criaRaza;
+ 
+  // ── Mostrar/ocultar gráfica y fila de producción según tipo de animal ──
+  const cardGrafica    = document.getElementById('cardGrafica');
+  const filaProduccion = document.getElementById('detProduccion').closest('.modal-det-fila');
+ 
+  const tieneProduccion = produccion && produccion.trim() !== '' && produccion.trim() !== 'N/A';
+ 
+  if (tieneProduccion) {
+    // Vaca — mostrar gráfica y fila producción
+    document.getElementById('detProduccion').textContent = produccion;
+    filaProduccion.style.display = 'flex';
+    cardGrafica.classList.remove('oculta');
+    renderGrafica();
+  } else {
+    // Toro / Ternero — ocultar gráfica y fila producción
+    filaProduccion.style.display = 'none';
+    cardGrafica.classList.add('oculta');
+    // Destruir gráfica anterior si existía para no dejarla en memoria
+    if (graficaInstance) {
+      graficaInstance.destroy();
+      graficaInstance = null;
+    }
+  }
+ 
   modalDetallesOverlay.classList.add('active');
-  renderGrafica();
 }
-
+ 
 // Gráfica
 function renderGrafica() {
   if (graficaInstance) graficaInstance.destroy();
@@ -105,13 +126,13 @@ function renderGrafica() {
       }]
     },
     options: {
-      maintainAspectRatio: false,   /* respeta la altura fija del contenedor */
+      maintainAspectRatio: false,
       plugins: { legend: { display: false } },
       scales: { y: { beginAtZero: true } }
     }
   });
 }
-
+ 
 // Botones vista/unidad
 document.querySelectorAll('#btnVista .det-btn').forEach(b => {
   b.addEventListener('click', () => {
@@ -119,14 +140,14 @@ document.querySelectorAll('#btnVista .det-btn').forEach(b => {
     b.classList.add('active');
   });
 });
-
+ 
 document.querySelectorAll('#btnUnidad .det-btn').forEach(b => {
   b.addEventListener('click', () => {
     document.querySelectorAll('#btnUnidad .det-btn').forEach(x => x.classList.remove('active'));
     b.classList.add('active');
   });
 });
-
+ 
 document.getElementById('modalDetallesCerrar').addEventListener('click',  () => modalDetallesOverlay.classList.remove('active'));
 document.getElementById('modalDetallesCerrar2').addEventListener('click', () => modalDetallesOverlay.classList.remove('active'));
 modalDetallesOverlay.addEventListener('click', (e) => {

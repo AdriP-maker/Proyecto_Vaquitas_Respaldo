@@ -29,27 +29,7 @@
     <!-- =====Fin Contenedor de Nuestra esencia ====== --> 
 
     <!-- =====Contenedor de Ganado Disponible ====== --> 
-    <section class="ganado" id="ganado">
-      <div class="ganado-container">
-        <h2 class="ganado-titulo">GANADO DISPONIBLE</h2>
-        <a href="#" class="ganado-link">Ver catálogo completo</a>
-        <!-- Carrusel de cards -->
-        <div class="ganado-wrapper">
-          <button class="ganado-btn prev" id="ganadoPrev">&#8249;</button>
-          <div class="ganado-track-outer">
-            <div class="ganado-track" id="ganadoTrack">
-            <?php include '../Complementos_html/Inicio_HTML/CardGanado.html'; ?>
-            </div><!-- /ganado-track -->
-          </div><!-- /ganado-track-outer -->
-          <button class="ganado-btn next" id="ganadoNext">&#8250;</button>
-        </div><!-- /ganado-wrapper -->
-        <!-- Solo 2 dots, uno por grupo -->
-        <div class="ganado-dots" id="ganadoDots">
-          <button class="gdot active" data-index="0"></button>
-          <button class="gdot" data-index="3"></button>
-        </div>
-      </div>
-    </section>
+    <?php include '../Complementos_html/Inicio_HTML/CardGanado.html'; ?>
     <!-- =====Fin Contenedor de Ganado Disponible ====== -->
 
     <!-- =====Inicio Garrafon ====== --> 
