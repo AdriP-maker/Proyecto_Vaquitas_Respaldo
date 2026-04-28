@@ -1,0 +1,106 @@
+<!-- ========================================================
+     confi.html – Fragmento embebible
+     Include: <?php include COMPLEMENTOS . '/confi.html'; ?>
+     ======================================================== -->
+
+<!-- Fecha y Hora Predeterminada -->
+<div class="config-card">
+  <div class="config-card-title">Fecha y Hora Predeterminada</div>
+  <div class="config-row">
+    <label class="config-label" for="cfg-fecha-hora">Fecha y Hora actual del sistema</label>
+    <div class="config-control">
+      <!--  fallback añadido a var(--teal-700) -->
+      <!-- data-auto-clock para que el JS sepa que debe llenarlo -->
+      <input type="text" id="cfg-fecha-hora" class="form-control" readonly
+             data-auto-clock="true"
+             style="background:#f4f7f0; font-weight:600; color:var(--teal-700, #0F6E56);"/>
+    </div>
+  </div>
+</div>
+
+<!-- Configuración de Inventario -->
+<div class="config-card">
+  <div class="config-card-title">Configuración de Inventario</div>
+
+  <div class="config-row">
+    <label class="config-label" for="cfg-dias-alerta">Días de alerta antes de vencimiento</label>
+    <div class="config-control">
+      <input type="number" id="cfg-dias-alerta" class="form-control" placeholder="Ej. 7" min="1" max="90"/>
+    </div>
+  </div>
+
+  <div class="config-row">
+    <label class="config-label" for="cfg-unidad">Unidad de medida por defecto</label>
+    <div class="config-control">
+      <select id="cfg-unidad" class="form-select">
+        <option value="kg" selected>Kilogramos (kg)</option>
+        <option value="lb">Libras (lb)</option>
+        <option value="l">Litros (L)</option>
+        <option value="unidades">Unidades</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="config-row">
+    <span class="config-label">Permitir inventario negativo</span>
+    <!-- onchange inline reemplazado por data-* -->
+    <div class="toggle-wrapper">
+      <span class="toggle-label-txt" id="lbl-inventario-neg">No</span>
+      <input class="form-check-input toggle-switch" type="checkbox" id="cfg-inventario-neg"
+             data-toggle-target="lbl-inventario-neg"/>
+    </div>
+  </div>
+
+  <div class="config-row">
+    <span class="config-label">Notificaciones de stock bajo</span>
+    <div class="toggle-wrapper">
+      <span class="toggle-label-txt" id="lbl-stock-bajo">Sí</span>
+      <input class="form-check-input toggle-switch" type="checkbox" id="cfg-stock-bajo"
+             checked data-toggle-target="lbl-stock-bajo"/>
+    </div>
+  </div>
+</div>
+
+<!-- Seguridad -->
+<div class="config-card">
+  <div class="config-card-title">Seguridad</div>
+
+  <div class="config-row">
+    <span class="config-label">Autenticación de dos factores</span>
+    <div class="toggle-wrapper">
+      <span class="toggle-label-txt" id="lbl-2fa">No</span>
+      <input class="form-check-input toggle-switch" type="checkbox" id="cfg-2fa"
+             data-toggle-target="lbl-2fa"/>
+    </div>
+  </div>
+
+  <div class="config-row">
+    <label class="config-label" for="cfg-sesion">Tiempo de sesión (minutos)</label>
+    <div class="config-control">
+      <input type="number" id="cfg-sesion" class="form-control" value="30" min="5" max="480"/>
+    </div>
+  </div>
+
+  <div class="config-row">
+    <label class="config-label" for="cfg-contrasena">Cambiar contraseña cada</label>
+    <div class="config-control">
+      <select id="cfg-contrasena" class="form-select">
+        <option value="30">30 días</option>
+        <option value="60">60 días</option>
+        <option value="90" selected>90 días</option>
+        <option value="180">180 días</option>
+        <option value="365">365 días</option>
+        <option value="0">Nunca</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- Botones de acción -->
+<!-- type="button" añadido + data-action en lugar de onclick inline -->
+<div class="config-footer">
+  <button type="button" class="btn-cancel" data-action="cancelar">Cancelar</button>
+  <button type="button" class="btn-save" data-action="guardar">
+    <i class="fa-solid fa-floppy-disk me-1"></i> Guardar Cambios
+  </button>
+</div>
