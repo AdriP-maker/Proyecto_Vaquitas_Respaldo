@@ -1,0 +1,84 @@
+<div id="modalProduccion" class="modal-overlay">
+
+  <div class="modal">
+
+    <!-- HEADER -->
+    <div class="modal-header">
+      <h2>Registro de ordeño</h2>
+
+      <div class="modo-toggle">
+        <button class="modo-btn" id="btnDiario">Diario</button>
+        <button class="modo-btn active" id="btnSemanal">Semanal</button>
+    </div>
+
+      <span class="modal-close" id="cerrarModal">&times;</span>
+    </div>
+
+    <!-- BODY -->
+    <div class="modal-body">
+
+      <!-- FILA 1 -->
+      <div class="form-row">
+        <div class="form-group">
+          <label>Vaca</label>
+          <select id="selectVaca">
+            <option value="">Seleccionar...</option>
+            <!-- Se llena dinámicamente -->
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Fecha</label>
+          <input type="date" id="fechaInput">
+        </div>
+      </div>
+
+      <!-- MAÑANA -->
+      <h3 class="form-section">Mañana</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Concentrado</label>
+          <div class="input-unit">
+            <input type="number" placeholder="0">
+            <span>kg</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Leche</label>
+          <div class="input-unit">
+            <input type="number" placeholder="0">
+            <span>L</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- TARDE -->
+      <h3 class="form-section">Tarde</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Concentrado</label>
+          <div class="input-unit">
+            <input type="number" placeholder="0">
+            <span>kg</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Leche</label>
+          <div class="input-unit">
+            <input type="number" placeholder="0">
+            <span>L</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- BOTÓN -->
+      <div class="form-actions">
+        <button class="btn-primary">Registrar</button>
+      </div>
+
+    </div>
+  </div>
+
+</div>
