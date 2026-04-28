@@ -25,8 +25,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 // Cuando tengas BD, quita este arreglo y haz la consulta aquí.
 $usuarios = [
     [
-        'usuario'    => 'admin',
-        'password'   => 'HoFloc@2024!',
+        'usuario'    => 'Horacio',
+        'password'   => 'HoFloc@2026!',
         'nombre'     => 'Horacio Flores',
         'email'      => 'horacio.flores@hofloc.com',
         'rol'        => 'admin',
@@ -71,5 +71,5 @@ $_SESSION['usuario_email']  = $encontrado['email'];
 $_SESSION['usuario_rol']    = $encontrado['rol'];
 $_SESSION['login_time']     = time();
 
-header('Location: dashboard.php');
+header('Location: /Proyecto_Vaquitas_Respaldo/Frontend/zona_admin/Paginas_php/dashboard.php');
 exit;
