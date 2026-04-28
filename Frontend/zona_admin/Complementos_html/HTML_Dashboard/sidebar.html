@@ -1,12 +1,10 @@
 <aside class="admin-sidebar">
-
   <div class="sidebar-brand">
     <div class="brand-name">HOFLOC.SA</div>
     <div class="brand-sub">Panel Administrativo</div>
   </div>
 
   <nav class="sidebar-nav">
-
     <!-- PRINCIPAL -->
     <div class="nav-label">Principal</div>
 
@@ -16,7 +14,11 @@
     </a>
 
     <!-- Operaciones con submenú -->
-    <div class="nav-item" id="nav-operaciones" onclick="toggleSubmenu('sub-operaciones', this)">
+    <div
+      class="nav-item"
+      id="nav-operaciones"
+      onclick="toggleSubmenu('sub-operaciones', this)"
+    >
       <i class="fa-solid fa-gears"></i>
       Operaciones
       <i class="fa-solid fa-chevron-down nav-toggle-icon"></i>
@@ -34,13 +36,17 @@
       <a href="gestion_sanitaria.php" class="nav-item">
         <i class="fa-solid fa-syringe"></i> Gestión Sanitaria
       </a>
-      <a href="mortalidad.php" class="nav-item">
+      <a href="pag_Mortalidad.php" class="nav-item">
         <i class="fa-solid fa-skull"></i> Mortalidad
       </a>
     </div>
 
     <!-- Gestión de Ganado con submenú -->
-    <div class="nav-item" id="nav-ganado" onclick="toggleSubmenu('sub-ganado', this)">
+    <div
+      class="nav-item"
+      id="nav-ganado"
+      onclick="toggleSubmenu('sub-ganado', this)"
+    >
       <i class="fa-solid fa-cow"></i>
       Gestión de Ganado
       <i class="fa-solid fa-chevron-down nav-toggle-icon"></i>
@@ -96,7 +102,6 @@
       <i class="fa-solid fa-arrow-right-from-bracket"></i>
       Cerrar Sesión
     </a>
-
   </nav>
 
   <div class="sidebar-user">
@@ -106,5 +111,4 @@
       <div class="user-role">Administrador</div>
     </div>
   </div>
-
 </aside>

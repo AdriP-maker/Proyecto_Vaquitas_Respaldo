@@ -1,0 +1,142 @@
+<!--Tabla de datos de mortalidad-->
+<div class="card tabla-card mb-4">
+  <div class="card-body">
+    <!-- Título + filtros -->
+    <div
+      class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-3"
+    >
+      <h5
+        class="mb-0 fw-bold d-flex align-items-center gap-2 cursor-pointer"
+        data-bs-toggle="modal"
+        data-bs-target="#modalHistorial"
+      >
+        <div class="title-icon">
+          <i class="fa-solid fa-list"></i>
+        </div>
+        Historial de Registros
+      </h5>
+
+      <!-- Filtros -->
+      <div class="d-flex gap-2 align-items-center flex-wrap">
+        <!-- Buscador -->
+        <div class="search-box position-relative">
+          <i
+            class="fa-solid fa-search position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"
+          ></i>
+          <input
+            type="text"
+            id="searchInput"
+            class="form-control form-control-sm ps-5"
+            placeholder="Buscar por arete..."
+          />
+        </div>
+
+        <!-- Filtro causa -->
+        <select
+          id="causeFilter"
+          class="form-select form-select-sm filter-select"
+        >
+          <option value="todos">Causa</option>
+          <option value="respiratoria">Respiratoria</option>
+          <option value="diarrea">Diarrea</option>
+          <option value="digestivos">Digestivos</option>
+        </select>
+
+        <!-- Filtro sexo -->
+        <select
+          id="sexoFilter"
+          class="form-select form-select-sm filter-select"
+        >
+          <option value="todos">Sexo</option>
+          <option value="hembra">Hembra</option>
+          <option value="macho">Macho</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Contenedor con scroll -->
+    <div class="table-responsive table-wrapper-scroll">
+      <table class="table table-hover table-sm align-middle custom-table mb-0">
+        <!-- Cabecera fija -->
+        <thead>
+          <tr>
+            <th>Arete</th>
+            <th>Trazabilidad</th>
+            <th>F. Nacimiento</th>
+            <th>F. Muerte</th>
+            <th>Género</th>
+            <th class="text-end">Causa</th>
+          </tr>
+        </thead>
+
+        <!-- Datos -->
+        <tbody id="tableBody">
+          <tr>
+            <td><span class="fw-bold">136</span></td>
+            <td>30603</td>
+            <td>15/6/2023</td>
+            <td>14/12/2025</td>
+            <td>Hembra</td>
+            <td class="text-end">
+              <span class="estado-badge danger">
+                <i class="fa-solid fa-virus-covid me-1"></i> Respiratoria
+              </span>
+            </td>
+          </tr>
+
+          <tr>
+            <td><span class="fw-bold">123</span></td>
+            <td>15592</td>
+            <td>12/1/2020</td>
+            <td>14/12/2025</td>
+            <td>Hembra</td>
+            <td class="text-end">
+              <span class="estado-badge warning">
+                <i class="fa-solid fa-bacterium me-1"></i> Diarrea
+              </span>
+            </td>
+          </tr>
+
+          <tr>
+            <td><span class="fw-bold">77</span></td>
+            <td>20203</td>
+            <td>28/2/2021</td>
+            <td>8/12/2025</td>
+            <td>Hembra</td>
+            <td class="text-end">
+              <span class="estado-badge purple">
+                <i class="fa-solid fa-stomach me-1"></i> Digestivos
+              </span>
+            </td>
+          </tr>
+
+          <tr>
+            <td><span class="fw-bold">220</span></td>
+            <td>23236</td>
+            <td>6/12/2022</td>
+            <td>19/12/2025</td>
+            <td>Macho</td>
+            <td class="text-end">
+              <span class="estado-badge purple">
+                <i class="fa-solid fa-stomach me-1"></i> Digestivos
+              </span>
+            </td>
+          </tr>
+
+          <tr>
+            <td><span class="fw-bold">56</span></td>
+            <td>12225</td>
+            <td>12/5/2020</td>
+            <td>4/12/2025</td>
+            <td>Hembra</td>
+            <td class="text-end">
+              <span class="estado-badge danger">
+                <i class="fa-solid fa-virus-covid me-1"></i> Respiratoria
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

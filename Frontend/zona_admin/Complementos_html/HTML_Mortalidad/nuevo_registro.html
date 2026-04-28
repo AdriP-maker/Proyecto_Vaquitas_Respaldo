@@ -1,0 +1,68 @@
+<!--Clase modal donde estara el formulario
+para ingresar un nuevo animal a la tabla de mortalidad-->
+
+<div class="modal fade" id="modalMortalidad" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold">Registrar Mortalidad</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+        ></button>
+      </div>
+
+      <form id="formMortalidad" method="POST" action="guardar_mortalidad.php">
+        <div class="modal-body">
+          <!-- Arete -->
+          <div class="mb-3">
+            <label class="form-label">Número de Arete</label>
+            <input
+              type="number"
+              name="arete"
+              id="areteInput"
+              class="form-control"
+              required
+            />
+          </div>
+
+          <!-- Causa -->
+          <div class="mb-3">
+            <label class="form-label">Causa</label>
+            <select name="causa" class="form-select" required>
+              <option value="">Seleccionar</option>
+              <option value="Respiratoria">Respiratoria</option>
+              <option value="Diarrea">Diarrea</option>
+              <option value="Digestivos">Digestivos</option>
+            </select>
+          </div>
+
+          <!-- Fecha -->
+          <div class="mb-3">
+            <label class="form-label">Fecha de Muerte</label>
+            <input type="date" name="fecha" class="form-control" required />
+          </div>
+
+          <!-- Observación -->
+          <div class="mb-3">
+            <label class="form-label">Observación</label>
+            <textarea
+              name="obs"
+              class="form-control"
+              rows="2"
+              required
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" data-bs-dismiss="modal">
+            Cancelar
+          </button>
+          <button type="submit" class="btn btn-success">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

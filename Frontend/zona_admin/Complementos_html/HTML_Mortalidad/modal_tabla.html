@@ -1,0 +1,66 @@
+<!--Modal para mostrar los datos de la tabla de forma completa
+manteniendo los filtros y búsqueda-->
+
+<div class="modal fade" id="modalHistorial" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <!-- Header -->
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold">
+          <i class="fa-solid fa-list me-2"></i>
+          Historial completo
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+        ></button>
+      </div>
+
+      <!-- Body -->
+      <div class="modal-body">
+        <!-- Filtros -->
+        <div class="d-flex gap-2 mb-3 flex-wrap">
+          <input
+            type="text"
+            id="searchInputModal"
+            class="form-control form-control-sm"
+            placeholder="Buscar por arete..."
+          />
+
+          <select id="causeFilterModal" class="form-select form-select-sm">
+            <option value="todos">Causa</option>
+            <option value="respiratoria">Respiratoria</option>
+            <option value="diarrea">Diarrea</option>
+            <option value="digestivos">Digestivos</option>
+          </select>
+
+          <select id="sexoFilterModal" class="form-select form-select-sm">
+            <option value="todos">Sexo</option>
+            <option value="hembra">Hembra</option>
+            <option value="macho">Macho</option>
+          </select>
+        </div>
+
+        <!-- TABLA (vacía, se clona) -->
+        <div class="table-responsive table-wrapper-scroll">
+          <table
+            class="table table-hover table-sm align-middle custom-table mb-0"
+          >
+            <thead>
+              <tr>
+                <th>Arete</th>
+                <th>Trazabilidad</th>
+                <th>F. Nacimiento</th>
+                <th>F. Muerte</th>
+                <th>Género</th>
+                <th class="text-end">Causa</th>
+              </tr>
+            </thead>
+            <tbody id="tableBodyModal"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
