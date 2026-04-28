@@ -4,6 +4,9 @@ $dir_base = dirname(__DIR__);
 
 // Ruta a los componentes compartidos del dashboard (sidebar, topbar, etc.)
 define('COMPLEMENTOS', $dir_base . '/Complementos_html/HTML_Dashboard');
+
+// Ruta a la carpeta de estilos CSS
+define('CSS',          $dir_base . '/Componentes_Visuales_Animados/css');
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -24,8 +27,8 @@ define('COMPLEMENTOS', $dir_base . '/Complementos_html/HTML_Dashboard');
   <!-- Framework Bootstrap -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
 
-  <!-- Estilos propios de esta pagina -->
-  <?php include __DIR__ . '/cfg_estilos.php'; ?>
+  <!-- Estilos propios de la pagina de configuracion -->
+  <link rel="stylesheet" href="../Componentes_Visuales_Animados/css/cfg_estilos.css"/>
 </head>
 <body>
 
@@ -39,12 +42,12 @@ define('COMPLEMENTOS', $dir_base . '/Complementos_html/HTML_Dashboard');
 
   <!-- Contenido principal de la pagina -->
   <main class="admin-main">
-    <?php include __DIR__ . '/cfg_contenido.php'; ?>
+    <?php include COMPLEMENTOS . '/cfg_contenido.html'; ?>
   </main>
 
 </div>
 
-<!-- Scripts: Bootstrap, dashboard global y logica de esta pagina -->
+<!-- Scripts de la pagina -->
 <?php include __DIR__ . '/cfg_scripts.php'; ?>
 
 </body>
