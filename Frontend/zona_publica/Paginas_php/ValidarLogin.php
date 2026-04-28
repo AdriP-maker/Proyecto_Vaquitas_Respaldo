@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ValidarLogin.php — HOFLOC, S.A. | Archivo Agrario
  * ---------------------------------------------------
@@ -27,6 +28,8 @@ $usuarios = [
     [
         'usuario'    => 'Horacio',
         'password'   => 'HoFloc@2026!',
+        'usuario'    => 'admin',
+        'password'   => 'HoFloc@2024!',
         'nombre'     => 'Horacio Flores',
         'email'      => 'horacio.flores@hofloc.com',
         'rol'        => 'admin',
@@ -71,5 +74,9 @@ $_SESSION['usuario_email']  = $encontrado['email'];
 $_SESSION['usuario_rol']    = $encontrado['rol'];
 $_SESSION['login_time']     = time();
 
+
 header('Location: /Proyecto_Vaquitas_Respaldo/Frontend/zona_admin/Paginas_php/dashboard.php');
+
+header('Location: dashboard.php');
+
 exit;
