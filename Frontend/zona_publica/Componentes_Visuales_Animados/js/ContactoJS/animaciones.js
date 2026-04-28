@@ -7,10 +7,10 @@ window.addEventListener('scroll', () => {
 
 // ── Hamburger mobile menu ──
 const hamburger = document.getElementById('hamburger');
-const navMobile = document.getElementById('navMobile');
+const navLinks = document.querySelector('.nav-links');
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('open');
-    navMobile.classList.toggle('open');
+     navLinks.classList.toggle('mobile-open'); 
 });
 
 // ── Form validation & submit ──

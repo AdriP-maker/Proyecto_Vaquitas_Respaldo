@@ -219,15 +219,15 @@ body {
 }
 
 .slide-1 {
-  background-image: url('../img/ImgInicio/Carru1.png');
+  background-image: url('../../img/ImgInicio/Carru1.png');
 }
 
 .slide-2 {
-  background-image: url('../img/ImgInicio/Carru2.png');
+  background-image: url('../../img/ImgInicio/Carru2.png');
 }
 
 .slide-3 {
-  background-image: url('../img/ImgInicio/Carru3.png');
+  background-image: url('../../img/ImgInicio/Carru3.png');
 }
 
 /* Overlay degradado */
@@ -924,7 +924,7 @@ body {
   position: relative;
   width: 100%;
   min-height: 550px;
-  background-image: url('../img/ImgInicio/Garrafon.jpg');
+  background-image: url('../../img/ImgInicio/Garrafon.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
