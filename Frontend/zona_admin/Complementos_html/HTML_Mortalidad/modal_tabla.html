@@ -1,7 +1,7 @@
 <!--Modal para mostrar los datos de la tabla de forma completa
 manteniendo los filtros y búsqueda-->
 
-<div class="modal fade" id="modalHistorial" tabindex="-1">
+<div class="modal fade modal-historial" id="modalHistorial" tabindex="-1">
   <div class="modal-dialog modal-xl modal-dialog-centered">
     <div class="modal-content">
       <!-- Header -->
@@ -20,26 +20,33 @@ manteniendo los filtros y búsqueda-->
       <!-- Body -->
       <div class="modal-body">
         <!-- Filtros -->
-        <div class="d-flex gap-2 mb-3 flex-wrap">
-          <input
-            type="text"
-            id="searchInputModal"
-            class="form-control form-control-sm"
-            placeholder="Buscar por arete..."
-          />
+        <div class="filter-bar">
+          <div class="filter-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+              type="text"
+              id="searchInputModal"
+              placeholder="Buscar por arete..."
+              maxlength="6"
+              inputmode="numeric"
+              pattern="[0-9]*"
+            />
+          </div>
 
-          <select id="causeFilterModal" class="form-select form-select-sm">
-            <option value="todos">Causa</option>
-            <option value="respiratoria">Respiratoria</option>
-            <option value="diarrea">Diarrea</option>
-            <option value="digestivos">Digestivos</option>
-          </select>
+          <div class="filter-group">
+            <select id="causeFilterModal">
+              <option value="todos">Causa</option>
+              <option value="respiratoria">Respiratoria</option>
+              <option value="diarrea">Diarrea</option>
+              <option value="digestivos">Digestivos</option>
+            </select>
 
-          <select id="sexoFilterModal" class="form-select form-select-sm">
-            <option value="todos">Sexo</option>
-            <option value="hembra">Hembra</option>
-            <option value="macho">Macho</option>
-          </select>
+            <select id="sexoFilterModal">
+              <option value="todos">Sexo</option>
+              <option value="hembra">Hembra</option>
+              <option value="macho">Macho</option>
+            </select>
+          </div>
         </div>
 
         <!-- TABLA (vacía, se clona) -->
@@ -64,3 +71,138 @@ manteniendo los filtros y búsqueda-->
     </div>
   </div>
 </div>
+
+<style>
+  /* =========================================
+   Estilos para MI MODAL DE Historial de tabla
+  ========================================= */
+
+  .modal-historial .filter-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background: white;
+    padding: 8px;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    margin-bottom: 12px;
+  }
+
+  /* BUSCADOR */
+  .modal-historial .filter-search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 0 0 250px;
+    max-width: 260px;
+    background: #f8fafc;
+    border-radius: 10px;
+    padding: 6px 10px;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+  }
+
+  .modal-historial .filter-search i {
+    color: #94a3b8;
+    font-size: 0.85rem;
+  }
+
+  .modal-historial .filter-search input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 0.85rem;
+    width: 100%;
+  }
+
+  /* EFECTO FOCUS */
+  .modal-historial .filter-search:focus-within {
+    border-color: #10b981;
+    background: white;
+    box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.15);
+  }
+
+  /* GRUPO DE FILTROS */
+  .modal-historial .filter-group {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    border-left: 1px solid #e2e8f0;
+    padding-left: 10px;
+  }
+
+  /* SELECTS */
+  .modal-historial .filter-group select {
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+    padding: 6px 10px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 120px;
+  }
+
+  .modal-historial .filter-group select:hover {
+    border-color: #10b981;
+    background: #ecfdf5;
+  }
+
+  .modal-historial .filter-group select:focus {
+    border-color: #10b981;
+    box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.15);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .modal-historial .filter-bar {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .modal-historial .filter-search {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .modal-historial .filter-group {
+      width: 100%;
+      border-left: none;
+      padding-left: 0;
+      justify-content: space-between;
+    }
+
+    .modal-historial .filter-group select {
+      flex: 1;
+    }
+  }
+</style>
+
+<script>
+  /* Validación en la entrada de type text e input que solo ingrese números y el mismo tenga un 
+    ancho de 6 números */
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const input = document.getElementById("searchInputModal");
+
+    input.addEventListener("input", () => {
+      // Eliminar todo lo que no sea número
+      input.value = input.value.replace(/\D/g, "");
+
+      // Limitar a 6 dígitos
+      if (input.value.length > 6) {
+        input.value = input.value.slice(0, 6);
+      }
+    });
+
+    // Evitar pegar cosas raras
+    input.addEventListener("paste", (e) => {
+      e.preventDefault();
+      let paste = (e.clipboardData || window.clipboardData).getData("text");
+      paste = paste.replace(/\D/g, "").slice(0, 6);
+      input.value = paste;
+    });
+  });
+</script>
