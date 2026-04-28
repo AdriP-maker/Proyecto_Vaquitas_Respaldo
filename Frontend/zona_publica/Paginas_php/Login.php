@@ -12,6 +12,10 @@
  *   includes/footer.html          → pie de página + Login.js
  */
 
+<<<<<<< HEAD
+=======
+// Prepara sesión, token CSRF y variables de alerta antes del HTML
+>>>>>>> 30caf87ffccb734589f2a2757afb7be61d3c479d
 // __DIR__ = directorio donde está ESTE archivo (Paginas_php/)
 // Así las rutas son absolutas y funcionan sin importar el CWD de XAMPP
 define('LOGIN_DIR', __DIR__);
