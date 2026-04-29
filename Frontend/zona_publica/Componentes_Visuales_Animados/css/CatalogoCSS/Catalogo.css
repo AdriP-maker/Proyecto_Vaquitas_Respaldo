@@ -1,0 +1,392 @@
+/* ============================================================
+   Catalogo.css — HOFLOC, S.A. | Archivo Agrario
+   Vista pública del catálogo de animales en venta.
+   Hereda variables y estilos base de navbarTodos.css
+   ============================================================ */
+
+/* ── Variables locales (extienden las del navbar) ── */
+:root {
+    --cat-bg:        #f6f2ec;
+    --cat-green:     #426B1F;
+    --cat-green-dk:  #1a3a2a;
+    --cat-gold:      #c9a84c;
+    --cat-cream:     #f5f0e8;
+    --cat-white:     #ffffff;
+    --cat-border:    rgba(0, 0, 0, 0.08);
+}
+
+/* ═══════════════════════════════════════════
+   HERO
+   ═══════════════════════════════════════════ */
+.cat-hero {
+    position: relative;
+    width: 100%;
+    min-height: 520px;
+    display: flex;
+    align-items: flex-end;
+    background-image: url('../../img/ImgInicio/Carru1.png');
+    background-size: cover;
+    background-position: center 35%;
+    overflow: hidden;
+}
+
+.cat-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(20, 42, 30, 0.35) 0%,
+        rgba(20, 42, 30, 0.70) 100%
+    );
+}
+
+.cat-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+    padding: 0 2.5rem 4rem;
+}
+
+.cat-hero-eyebrow {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-light, #e8c97a);
+    margin-bottom: 1rem;
+}
+
+.cat-hero-titulo {
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--cat-white);
+    margin-bottom: 1.2rem;
+}
+
+.cat-hero-highlight {
+    color: var(--cat-gold);
+}
+
+.cat-hero-subtitulo {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 580px;
+}
+
+/* Decoradores de fondo */
+.cat-hero-deco {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.deco-1 {
+    width: 500px;
+    height: 500px;
+    top: -125px;
+    left: -125px;
+    background: rgba(107, 140, 96, 0.08);
+}
+
+.deco-2 {
+    width: 375px;
+    height: 375px;
+    top: 100px;
+    right: -100px;
+    background: rgba(201, 170, 132, 0.06);
+}
+
+/* ═══════════════════════════════════════════
+   BARRA DE FILTROS
+   ═══════════════════════════════════════════ */
+.cat-filtros-section {
+    background: var(--cat-white);
+    border-bottom: 1px solid var(--cat-border);
+    padding: 1.5rem 0;
+    position: sticky;
+    top: var(--nav-height);
+    z-index: 50;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.cat-filtros-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.cat-filtro-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.cat-filtro-label {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #888;
+}
+
+.cat-select {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--cat-green-dk);
+    background: var(--cat-bg);
+    border: 1.5px solid rgba(66, 107, 31, 0.25);
+    border-radius: 8px;
+    padding: 0.55rem 2.2rem 0.55rem 0.9rem;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1L6 7L11 1' stroke='%23426B1F' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.8rem center;
+    min-width: 210px;
+    transition: border-color 0.2s;
+}
+
+.cat-select:focus {
+    outline: none;
+    border-color: var(--cat-green);
+}
+
+.cat-resultados-count {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.cat-count {
+    font-weight: 700;
+    color: var(--cat-green-dk);
+    font-size: 1rem;
+}
+
+/* ═══════════════════════════════════════════
+   GRID DE TARJETAS
+   ═══════════════════════════════════════════ */
+.cat-grid-section {
+    background: var(--cat-bg);
+    padding: 3rem 0 5rem;
+}
+
+/* Extiende .ganado-card de styles.css (Inicio) */
+.cat-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border-radius: 16px !important;
+    cursor: default;
+}
+
+.cat-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.13) !important;
+}
+
+.cat-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 16px 16px 0 0;
+}
+
+.cat-card .ganado-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1.2rem 1.5rem 1.5rem;
+}
+
+.cat-card .ganado-info h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--cat-green-dk);
+    margin-bottom: 0.4rem;
+}
+
+/* Badges de tipo */
+.cat-badge-tipo {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 0.3em 0.85em;
+    border-radius: 50px;
+    display: inline-block;
+}
+
+.cat-badge-vaca {
+    background: rgba(66, 107, 31, 0.12);
+    color: var(--cat-green);
+}
+
+.cat-badge-toro {
+    background: rgba(107, 63, 160, 0.1);
+    color: #6b3fa0;
+}
+
+.cat-badge-ternero {
+    background: rgba(201, 168, 76, 0.15);
+    color: #8a6800;
+}
+
+/* Grid de datos dentro de la tarjeta */
+.cat-card .ganado-grid-datos {
+    margin-top: 0.6rem;
+    margin-bottom: 1rem;
+    flex: 1;
+}
+
+/* Botones al fondo de la tarjeta */
+.cat-card .ganado-botones {
+    margin-top: auto;
+    display: flex;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+}
+
+/* Animación de entrada (IntersectionObserver en Catalogo.js) */
+.cat-col-card {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.cat-col-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mensaje sin resultados */
+.cat-sin-resultados {
+    text-align: center;
+    padding: 4rem 1rem;
+    color: #aaa;
+}
+
+.cat-sin-resultados i {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+    color: rgba(66, 107, 31, 0.25);
+}
+
+.cat-sin-resultados p {
+    font-family: var(--font-body);
+    font-size: 1rem;
+}
+
+/* ═══════════════════════════════════════════
+   MOBILE NAV DRAWER
+   (igual que en ContactoCSS/estilos.css)
+   ═══════════════════════════════════════════ */
+.nav-links-mobile {
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    background: rgba(15, 30, 20, 0.98);
+    padding: 1.5rem 2rem;
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+}
+
+.nav-links-mobile.open {
+    display: flex;
+}
+
+.nav-links-mobile a {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    transition: color 0.2s;
+}
+
+.nav-links-mobile a:last-child {
+    border-bottom: none;
+}
+
+.nav-links-mobile a:hover,
+.nav-links-mobile a.active {
+    color: var(--gold, #c9a84c);
+}
+
+.btn-login-mobile {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.55rem 1.35rem;
+    background: var(--gold, #c9a84c);
+    color: var(--green-dark, #1a3a2a) !important;
+    border-radius: 50px;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.25s;
+}
+
+.btn-login-mobile:hover {
+    background: var(--gold-light, #e8c97a);
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════ */
+@media (max-width: 768px) {
+    .cat-hero {
+        min-height: 380px;
+        align-items: center;
+    }
+
+    .cat-hero-content {
+        padding: 0 1.5rem 2.5rem;
+    }
+
+    .cat-filtros-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cat-select {
+        min-width: 100%;
+    }
+
+    .cat-grid-section {
+        padding: 2rem 0 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cat-hero-titulo {
+        font-size: 2rem;
+    }
+
+    .cat-card .ganado-botones {
+        flex-direction: column;
+    }
+
+    .cat-card .ganado-botones a {
+        text-align: center;
+    }
+}

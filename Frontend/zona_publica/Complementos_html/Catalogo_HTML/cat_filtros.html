@@ -1,0 +1,40 @@
+<!-- ═══════════════════════════════════════════
+     BARRA DE FILTROS
+     ═══════════════════════════════════════════ -->
+<section class="cat-filtros-section">
+  <div class="container">
+    <div class="cat-filtros-bar">
+
+      <!-- Filtro tipo -->
+      <div class="cat-filtro-grupo">
+        <label class="cat-filtro-label" for="filtroTipo">Filtrar por tipo</label>
+        <select class="cat-select" id="filtroTipo" onchange="filtrarAnimales()">
+          <option value="todos">Todos los animales</option>
+          <option value="vaca">Vacas lecheras</option>
+          <option value="toro">Toros</option>
+          <option value="ternero">Terneros</option>
+        </select>
+      </div>
+
+      <!-- Filtro raza -->
+      <div class="cat-filtro-grupo">
+        <label class="cat-filtro-label" for="filtroRaza">Raza</label>
+        <select class="cat-select" id="filtroRaza" onchange="filtrarAnimales()">
+          <option value="todas">Todas las razas</option>
+          <option value="Albera">Albera</option>
+          <option value="Holstein Roja">Holstein Roja</option>
+          <option value="Holstein">Holstein</option>
+          <option value="Girolando">Girolando</option>
+          <option value="Aberdeen Angus">Aberdeen Angus</option>
+          <option value="Brahman">Brahman</option>
+        </select>
+      </div>
+
+      <!-- Contador — el JS lo actualiza al filtrar -->
+      <div class="cat-resultados-count">
+        Mostrando <span class="cat-count" id="contadorResultados">6</span> ejemplares
+      </div>
+
+    </div>
+  </div>
+</section>
