@@ -31,17 +31,29 @@
 
   <!-- Bar: Producción semanal -->
   <div class="chart-card">
-    <div class="chart-card-header">
-      <div>
-        <h3>Producción de Leche</h3>
-        <p>Por semana — últimas 5 semanas</p>
-      </div>
-      <span class="chart-period-badge">Semanal</span>
+  <div class="chart-card-header">
+    <div>
+      <h3>Producción de Leche</h3>
+      <p id="chartSubtitle">Por semana — últimas 5 semanas</p>
     </div>
-    <div style="position:relative;height:240px;">
-      <canvas id="barChart"></canvas>
-    </div>
+    <div class="chart-switch chart-period-badge">
+  <button class="active" id="btnSemanal">Semanal</button>
+  <button id="btnMensual">Mensual</button>
+</div>
   </div>
+
+  <!-- CONTENEDOR DEL CHART -->
+  <div class="chart-container">
+    <canvas id="barChart"></canvas>
+  </div>
+
+  <!-- PAGINACIÓN -->
+  <div class="chart-pagination">
+    <button id="prevPage">◀</button>
+    <span id="pageIndicator">1</span>
+    <button id="nextPage">▶</button>
+  </div>
+</div>
 
   <!-- Panel: Próximos sucesos -->
   <div class="chart-card">
