@@ -1,64 +1,104 @@
-  <!-- ====== SIDEBAR ====== -->
+<!-- ====== SIDEBAR ====== -->
   <aside class="admin-sidebar">
 
     <!-- Brand -->
     <div class="sidebar-brand">
       <div class="brand-name">HOFLOC.SA</div>
-      <div class="brand-sub">Sistema Ganadero</div>
+      <div class="brand-sub">Panel Administrativo</div>
     </div>
 
     <!-- Nav -->
     <nav class="sidebar-nav">
 
+      <!-- PRINCIPAL -->
       <div class="nav-label">Principal</div>
 
       <a href="finca.php" class="nav-item">
-        <i class="fa fa-th-large"></i> Finca
+        <i class="fa fa-home"></i>
+        Finca
       </a>
 
-      <a href="operaciones.php" class="nav-item">
-        <i class="fa fa-cogs"></i> Operaciones
+      <a class="nav-item open" onclick="toggleSubmenu(this)">
+        <i class="fa fa-cog"></i>
+        Operaciones
+        <i class="fa fa-angle-down nav-toggle-icon"></i>
       </a>
+      <div class="nav-submenu open">
+        <a href="pesaje.php" class="nav-item active">
+          <i class="fa fa-balance-scale"></i> Pesaje
+        </a>
+        <a href="produccion.php" class="nav-item">
+          <i class="fa fa-tint"></i> Producción Leche
+        </a>
+        <a href="alimentacion.php" class="nav-item">
+          <i class="fa fa-leaf"></i> Alimentación
+        </a>
+      </div>
 
-      <a href="ganado.php" class="nav-item">
-        <i class="fa fa-paw"></i> Ganado
+      <a class="nav-item" onclick="toggleSubmenu(this)">
+        <i class="fa fa-paw"></i>
+        Gestión de Ganado
+        <i class="fa fa-angle-down nav-toggle-icon"></i>
       </a>
-
-      <div class="nav-divider"></div>
-      <div class="nav-label">Gestión</div>
+      <div class="nav-submenu">
+        <a href="animales.php" class="nav-item">
+          <i class="fa fa-tag"></i> Animales
+        </a>
+        <a href="razas.php" class="nav-item">
+          <i class="fa fa-list"></i> Razas
+        </a>
+        <a href="lotes.php" class="nav-item">
+          <i class="fa fa-th"></i> Lotes
+        </a>
+      </div>
 
       <a href="alertas.php" class="nav-item">
-        <i class="fa fa-bell"></i> Alertas
-        <span class="badge" style="background:var(--danger);margin-left:auto;">3</span>
+        <i class="fa fa-bell"></i>
+        Alertas
+        <span style="margin-left:auto;background:#c62828;color:#fff;font-size:.62rem;font-weight:700;padding:1px 6px;border-radius:10px;line-height:1.6;">3</span>
       </a>
 
       <a href="reportes.php" class="nav-item">
-        <i class="fa fa-bar-chart"></i> Reportes
+        <i class="fa fa-bar-chart"></i>
+        Reportes
       </a>
 
       <a href="colaboradores.php" class="nav-item">
-        <i class="fa fa-users"></i> Colaboradores
+        <i class="fa fa-users"></i>
+        Colaboradores
       </a>
 
+      <!-- FINANZAS -->
+      <div class="nav-divider"></div>
+      <div class="nav-label">Finanzas</div>
+
+      <a href="contabilidad.php" class="nav-item">
+        <i class="fa fa-calculator"></i>
+        Contabilidad
+      </a>
+
+      <!-- SISTEMA -->
       <div class="nav-divider"></div>
       <div class="nav-label">Sistema</div>
 
       <a href="configuracion.php" class="nav-item">
-        <i class="fa fa-sliders"></i> Configuración
+        <i class="fa fa-sliders"></i>
+        Configuración
       </a>
 
-      <a href="logout.php" class="nav-item" style="color:var(--danger);">
-        <i class="fa fa-sign-out" style="color:var(--danger);"></i> Cerrar Sesión
+      <a href="logout.php" class="nav-item">
+        <i class="fa fa-sign-out"></i>
+        Cerrar Sesión
       </a>
 
     </nav>
 
     <!-- User block -->
     <div class="sidebar-user">
-      <div class="user-avatar">AD</div>
+      <div class="user-avatar">HO</div>
       <div class="user-info">
-        <span class="user-name">Administrador</span>
-        <span class="user-role">honec@gmail.com</span>
+        <span class="user-name">Horacio</span>
+        <span class="user-role">Administrador</span>
       </div>
     </div>
 
