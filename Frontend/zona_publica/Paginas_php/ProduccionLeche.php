@@ -20,49 +20,20 @@
     <?php include '../Complementos_html/ProduccionLeche_HTML/Carrusel.html'; ?>
     <!-- ===== FIN CARRUSEL ===== -->
 
-    <!-- =====Contenedor de Nuestra esencia ====== --> 
-    <section class="esencia" id="esencia">
-      <div class="esencia-container">
-        <?php include '../Complementos_html/ProduccionLeche_HTML/Esencia.html'; ?>
-      </div>
-    </section>
-    <!-- =====Fin Contenedor de Nuestra esencia ====== --> 
-
-    <!-- =====Contenedor de Ganado Disponible ====== --> 
-    <section class="ganado" id="ganado">
-      <div class="ganado-container">
-        <h2 class="ganado-titulo">GANADO DISPONIBLE</h2>
-        <a href="#" class="ganado-link">Ver catálogo completo</a>
-        <!-- Carrusel de cards -->
-        <div class="ganado-wrapper">
-          <button class="ganado-btn prev" id="ganadoPrev">&#8249;</button>
-          <div class="ganado-track-outer">
-            <div class="ganado-track" id="ganadoTrack">
-            <?php include '../Complementos_html/Inicio_HTML/CardGanado.html'; ?>
-            </div><!-- /ganado-track -->
-          </div><!-- /ganado-track-outer -->
-          <button class="ganado-btn next" id="ganadoNext">&#8250;</button>
-        </div><!-- /ganado-wrapper -->
-        <!-- Solo 2 dots, uno por grupo -->
-        <div class="ganado-dots" id="ganadoDots">
-          <button class="gdot active" data-index="0"></button>
-          <button class="gdot" data-index="3"></button>
-        </div>
-      </div>
-    </section>
-    <!-- =====Fin Contenedor de Ganado Disponible ====== -->
-
-    <!-- =====Inicio Garrafon ====== --> 
-    <?php include '../Complementos_html/Inicio_HTML/Garrafon.html'; ?>
-    <!-- =====Fin Garrafon ====== -->
-
+    <!-- ══ CONTROL DE CALIDAD ══ -->
+    <?php include '../Complementos_html/ProduccionLeche_HTML/calidad.html'; ?>
+    <!-- ══ FIN CONTROL DE CALIDAD ══ -->
+    
+    <!-- ══ TRAZABILIDAD ══ -->
+    <?php include '../Complementos_html/ProduccionLeche_HTML/trazabilidad.html'; ?>
+    <!-- ══ FIN TRAZABILIDAD ══ -->
+    
+    <!-- ══ CONSULTAR DISPONIBILIDAD ══ -->
+    <?php include '../Complementos_html/ProduccionLeche_HTML/disponibilidad.html'; ?>
+    <!-- ══ FIN CONSULTAR DISPONIBILIDAD ══ -->
     <!-- =====Inicio Footer ====== --> 
-    <?php include '../Complementos_html/Inicio_HTML/Footer.html'; ?>
+    <?php include '../Complementos_html/ProduccionLeche_HTML/Footer.html'; ?>
     <!-- =====Fin Footer ====== -->
-
-     <!-- =====Inicio Modal de las CardGanado ====== -->
-    <?php include '../Complementos_html/Inicio_HTML/CGanado_Modal.html'; ?>
-      <!-- =====Fin Modal de las CardGanado====== -->
 
     <!-- ===== Animación del carrusel ===== -->
      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
