@@ -1,154 +1,140 @@
 <!-- ====== MAIN CONTENT ====== -->
   <main class="admin-main">
 
-    <!-- Page header -->
     <div class="page-header">
       <h1>Pesaje</h1>
       <p>Registra el peso de cada res</p>
     </div>
 
-    <div class="row" style="margin:0 -8px;">
+    <!-- Grid de dos columnas — sin Bootstrap gutters -->
+    <div class="pesaje-cols">
 
-      <!-- ===== COL IZQUIERDA: Formulario ===== -->
-      <div class="col-md-7" style="padding:0 8px;">
-        <div class="pesaje-card">
+      <!-- ===== COLUMNA IZQUIERDA: Formulario ===== -->
+      <div class="pesaje-card">
 
-          <div class="pesaje-section-label">Registro de pesaje</div>
+        <div class="pesaje-section-label">Registro de pesaje</div>
 
-          <!-- Fecha / Hora -->
-          <div class="row" style="margin:0 -6px;">
-            <div class="col-sm-6" style="padding:0 6px;">
-              <div class="form-group-pesaje">
-                <label class="pesaje-label">Fecha</label>
-                <input type="text" class="pesaje-input" placeholder="00/00/00" id="fecha" />
-              </div>
-            </div>
-            <div class="col-sm-6" style="padding:0 6px;">
-              <div class="form-group-pesaje">
-                <label class="pesaje-label">Hora</label>
-                <input type="text" class="pesaje-input" placeholder="00:00" id="hora" />
-              </div>
-            </div>
-          </div>
-
-          <!-- Buscador -->
+        <!-- Fecha / Hora -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;">
           <div class="form-group-pesaje">
-            <label class="pesaje-label">Buscar código</label>
-            <div class="pesaje-search-wrap">
-              <i class="fa fa-search pesaje-search-icon"></i>
-              <input type="text" class="pesaje-input pesaje-search-input"
-                     placeholder="Buscar animal..."
-                     id="buscarCodigo"
-                     onkeyup="filtrarAnimales(this.value)" />
-            </div>
+            <label class="pesaje-label">Fecha</label>
+            <input type="text" class="pesaje-input" placeholder="00/00/00" id="fecha" />
           </div>
-
-          <!-- Lista animales -->
-          <div class="animal-list" id="animalList">
-
-            <div class="animal-item" onclick="seleccionarAnimal(this)" data-id="1042">
-              <img src="https://placehold.co/36x36/8BC34A/fff?text=%F0%9F%90%84" class="animal-avatar" alt="" />
-              <div class="animal-info">
-                <span class="animal-name">Vaca #1042</span>
-                <span class="animal-meta">Hembra &nbsp;·&nbsp; 3 años &nbsp;·&nbsp; Holstein</span>
-              </div>
-              <button class="btn-seleccionar" onclick="event.stopPropagation();seleccionarAnimal(this.closest('.animal-item'))">
-                <i class="fa fa-arrow-right"></i>
-              </button>
-            </div>
-
-            <div class="animal-item" onclick="seleccionarAnimal(this)" data-id="2031">
-              <img src="https://placehold.co/36x36/795548/fff?text=%F0%9F%90%84" class="animal-avatar" alt="" />
-              <div class="animal-info">
-                <span class="animal-name">Vaca #2031</span>
-                <span class="animal-meta">Hembra &nbsp;·&nbsp; 3 años &nbsp;·&nbsp; Holstein</span>
-              </div>
-              <button class="btn-seleccionar" onclick="event.stopPropagation();seleccionarAnimal(this.closest('.animal-item'))">
-                <i class="fa fa-arrow-right"></i>
-              </button>
-            </div>
-
-            <div class="animal-item" onclick="seleccionarAnimal(this)" data-id="9012">
-              <img src="https://placehold.co/36x36/607D8B/fff?text=%F0%9F%90%84" class="animal-avatar" alt="" />
-              <div class="animal-info">
-                <span class="animal-name">Vaca #9012</span>
-                <span class="animal-meta">Hembra &nbsp;·&nbsp; 3 años &nbsp;·&nbsp; Holstein</span>
-              </div>
-              <button class="btn-seleccionar" onclick="event.stopPropagation();seleccionarAnimal(this.closest('.animal-item'))">
-                <i class="fa fa-arrow-right"></i>
-              </button>
-            </div>
-
-            <div class="animal-item" onclick="seleccionarAnimal(this)" data-id="8765">
-              <img src="https://placehold.co/36x36/FF8A65/fff?text=%F0%9F%90%84" class="animal-avatar" alt="" />
-              <div class="animal-info">
-                <span class="animal-name">Vaca #8765</span>
-                <span class="animal-meta">Hembra &nbsp;·&nbsp; 3 años &nbsp;·&nbsp; Holstein</span>
-              </div>
-              <button class="btn-seleccionar" onclick="event.stopPropagation();seleccionarAnimal(this.closest('.animal-item'))">
-                <i class="fa fa-arrow-right"></i>
-              </button>
-            </div>
-
-          </div>
-
-          <!-- Conectar dispositivos -->
           <div class="form-group-pesaje">
-            <label class="pesaje-label">Conectar dispositivos</label>
-            <button class="btn-bascula" type="button">
-              <i class="fa fa-bluetooth-b"></i> Báscula
+            <label class="pesaje-label">Hora</label>
+            <input type="text" class="pesaje-input" placeholder="00:00" id="hora" />
+          </div>
+        </div>
+
+        <!-- Buscador -->
+        <div class="form-group-pesaje">
+          <label class="pesaje-label">Buscar código</label>
+          <div class="pesaje-search-wrap">
+            <i class="fa fa-search pesaje-search-icon"></i>
+            <input type="text" class="pesaje-input pesaje-search-input"
+                   placeholder="Buscar animal..."
+                   id="buscarCodigo"
+                   onkeyup="filtrarAnimales(this.value)" />
+          </div>
+        </div>
+
+        <!-- Lista animales -->
+        <div class="animal-list" id="animalList">
+          <div class="animal-item" onclick="seleccionarAnimal(this)" data-id="1042">
+            <img src="https://placehold.co/34x34/8BC34A/fff?text=%F0%9F%90%84" class="animal-avatar" alt="" />
+            <div class="animal-info">
+              <span class="animal-name">Vaca #1042</span>
+              <span class="animal-meta">Hembra &nbsp;·&nbsp; 3 años &nbsp;·&nbsp; Holstein</span>
+            </div>
+            <button class="btn-seleccionar" onclick="event.stopPropagation();seleccionarAnimal(this.closest('.animal-item'))">
+              <i class="fa fa-arrow-right"></i>
             </button>
           </div>
-
-          <!-- Tipo alimentación -->
-          <div class="form-group-pesaje">
-            <label class="pesaje-label">Tipo de alimentación</label>
-            <div class="alimentacion-group">
-              <label class="check-item">
-                <input type="checkbox" name="alimentacion" value="mixto" />
-                <span class="check-label">Mixto</span>
-              </label>
-              <label class="check-item">
-                <input type="checkbox" name="alimentacion" value="estabulado" />
-                <span class="check-label">Estabulado</span>
-              </label>
-              <label class="check-item">
-                <input type="checkbox" name="alimentacion" value="pastoreo" checked />
-                <span class="check-label">Pastoreo</span>
-              </label>
+          <div class="animal-item" onclick="seleccionarAnimal(this)" data-id="2031">
+            <img src="https://placehold.co/34x34/795548/fff?text=%F0%9F%90%84" class="animal-avatar" alt="" />
+            <div class="animal-info">
+              <span class="animal-name">Vaca #2031</span>
+              <span class="animal-meta">Hembra &nbsp;·&nbsp; 3 años &nbsp;·&nbsp; Holstein</span>
             </div>
-          </div>
-
-          <!-- Peso registrado -->
-          <div class="form-group-pesaje">
-            <label class="pesaje-label">Peso Registrado</label>
-            <div class="peso-input-wrap">
-              <input type="number" class="pesaje-input" placeholder="0.00"
-                     id="pesoRegistrado" step="0.01" />
-              <span class="peso-unit">Kg</span>
-            </div>
-          </div>
-
-          <!-- Acciones -->
-          <div class="form-actions">
-            <button type="button" class="btn-cancelar" onclick="cancelarPesaje()">
-              Cancelar
-            </button>
-            <button type="button" class="btn-registrar" onclick="registrarPeso()">
-              <i class="fa fa-check"></i> Registrar peso
+            <button class="btn-seleccionar" onclick="event.stopPropagation();seleccionarAnimal(this.closest('.animal-item'))">
+              <i class="fa fa-arrow-right"></i>
             </button>
           </div>
+          <div class="animal-item" onclick="seleccionarAnimal(this)" data-id="9012">
+            <img src="https://placehold.co/34x34/607D8B/fff?text=%F0%9F%90%84" class="animal-avatar" alt="" />
+            <div class="animal-info">
+              <span class="animal-name">Vaca #9012</span>
+              <span class="animal-meta">Hembra &nbsp;·&nbsp; 3 años &nbsp;·&nbsp; Holstein</span>
+            </div>
+            <button class="btn-seleccionar" onclick="event.stopPropagation();seleccionarAnimal(this.closest('.animal-item'))">
+              <i class="fa fa-arrow-right"></i>
+            </button>
+          </div>
+          <div class="animal-item" onclick="seleccionarAnimal(this)" data-id="8765">
+            <img src="https://placehold.co/34x34/FF8A65/fff?text=%F0%9F%90%84" class="animal-avatar" alt="" />
+            <div class="animal-info">
+              <span class="animal-name">Vaca #8765</span>
+              <span class="animal-meta">Hembra &nbsp;·&nbsp; 3 años &nbsp;·&nbsp; Holstein</span>
+            </div>
+            <button class="btn-seleccionar" onclick="event.stopPropagation();seleccionarAnimal(this.closest('.animal-item'))">
+              <i class="fa fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
 
-        </div><!-- /pesaje-card -->
-      </div><!-- /col-md-7 -->
+        <!-- Dispositivos -->
+        <div class="form-group-pesaje">
+          <label class="pesaje-label">Conectar dispositivos</label>
+          <button class="btn-bascula" type="button">
+            <i class="fa fa-bluetooth-b"></i> Báscula
+          </button>
+        </div>
 
-      <!-- ===== COL DERECHA: Resumen + Últimos ===== -->
-      <div class="col-md-5" style="padding:0 8px;">
+        <!-- Tipo alimentación -->
+        <div class="form-group-pesaje">
+          <label class="pesaje-label">Tipo de alimentación</label>
+          <div class="alimentacion-group">
+            <label class="check-item">
+              <input type="checkbox" name="alimentacion" value="mixto" />
+              <span class="check-label">Mixto</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" name="alimentacion" value="estabulado" />
+              <span class="check-label">Estabulado</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" name="alimentacion" value="pastoreo" checked />
+              <span class="check-label">Pastoreo</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Peso -->
+        <div class="form-group-pesaje">
+          <label class="pesaje-label">Peso Registrado</label>
+          <div class="peso-input-wrap">
+            <input type="number" class="pesaje-input" placeholder="0.00"
+                   id="pesoRegistrado" step="0.01" />
+            <span class="peso-unit">Kg</span>
+          </div>
+        </div>
+
+        <!-- Acciones -->
+        <div class="form-actions">
+          <button type="button" class="btn-cancelar" onclick="cancelarPesaje()">Cancelar</button>
+          <button type="button" class="btn-registrar" onclick="registrarPeso()">
+            <i class="fa fa-check"></i> Registrar peso
+          </button>
+        </div>
+
+      </div><!-- /pesaje-card -->
+
+      <!-- ===== COLUMNA DERECHA ===== -->
+      <div>
 
         <!-- Resumen del día -->
         <div class="resumen-card">
           <div class="resumen-header">Resumen del día</div>
-
           <div class="resumen-grid">
             <div class="resumen-block">
               <div class="resumen-label">Animales pesados hoy</div>
@@ -167,7 +153,6 @@
               <div class="resumen-value-sm">460 kg</div>
             </div>
           </div>
-
           <div class="resumen-total-row">
             <span class="resumen-label">Peso total</span>
             <span class="resumen-total-value">1,462.0 kg</span>
@@ -178,85 +163,47 @@
         <div class="ultimos-card">
           <div class="ultimos-header">Ultimos registros</div>
           <div class="ultimos-list" id="ultimosList">
-
             <div class="ultimo-item">
-              <img src="https://placehold.co/34x34/8BC34A/fff?text=%F0%9F%90%84" class="ultimo-avatar" alt="" />
-              <div class="ultimo-info">
-                <span class="ultimo-name">Vaca #1042</span>
-                <span class="ultimo-meta">8:47am Pastoreo</span>
-              </div>
+              <img src="https://placehold.co/32x32/8BC34A/fff?text=%F0%9F%90%84" class="ultimo-avatar" alt="" />
+              <div class="ultimo-info"><span class="ultimo-name">Vaca #1042</span><span class="ultimo-meta">8:47am Pastoreo</span></div>
               <span class="ultimo-peso">490 kg</span>
             </div>
-
             <div class="ultimo-item">
-              <img src="https://placehold.co/34x34/795548/fff?text=%F0%9F%90%84" class="ultimo-avatar" alt="" />
-              <div class="ultimo-info">
-                <span class="ultimo-name">Vaca #1042</span>
-                <span class="ultimo-meta">9:30pm Mixto</span>
-              </div>
+              <img src="https://placehold.co/32x32/795548/fff?text=%F0%9F%90%84" class="ultimo-avatar" alt="" />
+              <div class="ultimo-info"><span class="ultimo-name">Vaca #1042</span><span class="ultimo-meta">9:30pm Mixto</span></div>
               <span class="ultimo-peso">360 kg</span>
             </div>
-
             <div class="ultimo-item">
-              <img src="https://placehold.co/34x34/607D8B/fff?text=%F0%9F%90%84" class="ultimo-avatar" alt="" />
-              <div class="ultimo-info">
-                <span class="ultimo-name">Vaca #104</span>
-                <span class="ultimo-meta">3:56pm Pastoreo</span>
-              </div>
+              <img src="https://placehold.co/32x32/607D8B/fff?text=%F0%9F%90%84" class="ultimo-avatar" alt="" />
+              <div class="ultimo-info"><span class="ultimo-name">Vaca #104</span><span class="ultimo-meta">3:56pm Pastoreo</span></div>
               <span class="ultimo-peso">378 kg</span>
             </div>
-
             <div class="ultimo-item">
-              <img src="https://placehold.co/34x34/FF7043/fff?text=%F0%9F%90%84" class="ultimo-avatar" alt="" />
-              <div class="ultimo-info">
-                <span class="ultimo-name">Vaca #1050</span>
-                <span class="ultimo-meta">9:30am Estabulado</span>
-              </div>
+              <img src="https://placehold.co/32x32/FF7043/fff?text=%F0%9F%90%84" class="ultimo-avatar" alt="" />
+              <div class="ultimo-info"><span class="ultimo-name">Vaca #1050</span><span class="ultimo-meta">9:30am Estabulado</span></div>
               <span class="ultimo-peso">785 kg</span>
             </div>
-
             <div class="ultimo-item">
-              <img src="https://placehold.co/34x34/9C27B0/fff?text=%F0%9F%90%84" class="ultimo-avatar" alt="" />
-              <div class="ultimo-info">
-                <span class="ultimo-name">Vaca #1039</span>
-                <span class="ultimo-meta">9:37am Pastoreo</span>
-              </div>
+              <img src="https://placehold.co/32x32/9C27B0/fff?text=%F0%9F%90%84" class="ultimo-avatar" alt="" />
+              <div class="ultimo-info"><span class="ultimo-name">Vaca #1039</span><span class="ultimo-meta">9:37am Pastoreo</span></div>
               <span class="ultimo-peso">215 kg</span>
             </div>
-
             <div class="ultimo-item">
-              <img src="https://placehold.co/34x34/FF7043/fff?text=%F0%9F%90%84" class="ultimo-avatar" alt="" />
-              <div class="ultimo-info">
-                <span class="ultimo-name">Vaca #1050</span>
-                <span class="ultimo-meta">9:30am Estabulado</span>
-              </div>
+              <img src="https://placehold.co/32x32/FF7043/fff?text=%F0%9F%90%84" class="ultimo-avatar" alt="" />
+              <div class="ultimo-info"><span class="ultimo-name">Vaca #1050</span><span class="ultimo-meta">9:30am Estabulado</span></div>
               <span class="ultimo-peso">785 kg</span>
             </div>
-
-            <div class="ultimo-item">
-              <img src="https://placehold.co/34x34/7E57C2/fff?text=%F0%9F%90%84" class="ultimo-avatar" alt="" />
-              <div class="ultimo-info">
-                <span class="ultimo-name">Vaca #1039</span>
-                <span class="ultimo-meta">9:37am Pastoreo</span>
-              </div>
-              <span class="ultimo-peso">215 kg</span>
-            </div>
-
             <div class="ultimo-item ultimo-item--active">
-              <img src="https://placehold.co/34x34/7E57C2/fff?text=%F0%9F%90%84" class="ultimo-avatar" alt="" />
-              <div class="ultimo-info">
-                <span class="ultimo-name">Vaca #1039</span>
-                <span class="ultimo-meta">9:37am Pastoreo</span>
-              </div>
+              <img src="https://placehold.co/32x32/7E57C2/fff?text=%F0%9F%90%84" class="ultimo-avatar" alt="" />
+              <div class="ultimo-info"><span class="ultimo-name">Vaca #1039</span><span class="ultimo-meta">9:37am Pastoreo</span></div>
               <span class="ultimo-peso">215 kg</span>
             </div>
-
           </div>
         </div>
 
-      </div><!-- /col-md-5 -->
+      </div><!-- /col derecha -->
 
-    </div><!-- /row -->
+    </div><!-- /pesaje-cols -->
 
   </main>
   <!-- ====== /MAIN CONTENT ====== -->

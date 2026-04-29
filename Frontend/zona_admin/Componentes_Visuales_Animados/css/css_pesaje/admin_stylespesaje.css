@@ -1,7 +1,6 @@
 /* =============================================
    HOFLOC.SA – ADMIN SHELL
-   Fuente: IBM Plex Sans
-   Sidebar: idéntico al dashboard de referencia
+   Fuente: IBM Plex Sans — igual al dashboard
    ============================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
@@ -9,34 +8,30 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --sidebar-w:      238px;
-  --topbar-h:       52px;
+  --sidebar-w:    238px;
+  --topbar-h:     56px;
 
-  /* Sidebar – exacto del dashboard */
   --sidebar-bg:     #5dbf6a;
-  --sidebar-txt:    #12240f;
-  --sidebar-sub:    rgba(10,36,10,.5);
-  --sidebar-border: rgba(10,36,10,.13);
-  --sidebar-active: rgba(255,255,255,.38);
-  --sidebar-hover:  rgba(255,255,255,.18);
+  --sidebar-txt:    #0d1f0a;
+  --sidebar-sub:    rgba(8,30,5,.48);
+  --sidebar-border: rgba(8,30,5,.12);
+  --sidebar-active: rgba(255,255,255,.36);
+  --sidebar-hover:  rgba(255,255,255,.17);
 
-  /* Paleta */
-  --green-900: #12240f;
-  --green-700: #1e4a18;
+  --green-900: #0d1f0a;
+  --green-700: #1a4016;
   --green-500: #2e7d32;
   --green-400: #43a047;
   --green-100: #e8f5e9;
   --gold:      #bf8c24;
   --danger:    #c62828;
 
-  /* Surfaces */
   --page-bg:     #eef2eb;
   --card-bg:     #ffffff;
   --card-border: rgba(0,0,0,.06);
-  --shadow-card: 0 1px 8px rgba(18,36,15,.08);
+  --shadow-card: 0 1px 6px rgba(13,31,10,.07);
   --topbar-bg:   #ffffff;
 
-  /* Typography */
   --font-ui:   'IBM Plex Sans', sans-serif;
   --font-mono: 'IBM Plex Mono', monospace;
 
@@ -44,7 +39,8 @@
   --radius-sm:  7px;
 }
 
-html { font-size: 14px; scroll-behavior: smooth; }
+/* Base idéntica al dashboard */
+html { font-size: 16px; scroll-behavior: smooth; }
 
 body {
   font-family: var(--font-ui);
@@ -55,7 +51,7 @@ body {
 }
 
 /* =============================================
-   LAYOUT SHELL
+   LAYOUT
    ============================================= */
 .admin-shell {
   display: grid;
@@ -65,7 +61,7 @@ body {
 }
 
 /* =============================================
-   SIDEBAR — idéntico al dashboard de referencia
+   SIDEBAR — pixel a pixel del dashboard
    ============================================= */
 .admin-sidebar {
   grid-row: 1 / -1;
@@ -82,123 +78,117 @@ body {
 }
 .admin-sidebar::-webkit-scrollbar { display: none; }
 
-/* Brand */
+/* Brand — tamaño exacto del dashboard */
 .sidebar-brand {
-  padding: 1.2rem 1.1rem 1rem;
+  padding: 1.25rem 1.2rem 1rem;
   border-bottom: 1px solid var(--sidebar-border);
 }
 .sidebar-brand .brand-name {
   font-family: var(--font-ui);
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: var(--green-900);
   letter-spacing: -.01em;
+  line-height: 1.15;
 }
 .sidebar-brand .brand-sub {
-  font-size: .68rem;
+  font-size: .7rem;
   font-weight: 500;
-  letter-spacing: .06em;
+  letter-spacing: .07em;
   text-transform: uppercase;
   color: var(--sidebar-sub);
-  margin-top: 2px;
+  margin-top: 3px;
 }
 
-/* Nav */
-.sidebar-nav { flex: 1; padding: .5rem 0 .8rem; }
+/* Nav items — misma densidad que el dashboard */
+.sidebar-nav { flex: 1; padding: .55rem 0 .8rem; }
 
 .nav-label {
-  font-size: .62rem;
+  font-size: .65rem;
   font-weight: 600;
-  letter-spacing: .12em;
+  letter-spacing: .11em;
   text-transform: uppercase;
   color: var(--sidebar-sub);
-  padding: .9rem 1.1rem .3rem;
+  padding: .9rem 1.2rem .35rem;
 }
 
 .nav-item {
   display: flex;
   align-items: center;
-  gap: .7rem;
-  padding: .58rem 1rem .58rem 1.1rem;
+  gap: .75rem;
+  padding: .6rem 1rem .6rem 1.2rem;
   color: var(--sidebar-txt);
   text-decoration: none;
-  font-size: .9rem;
+  font-size: .95rem;
   font-weight: 500;
-  transition: background .14s;
+  transition: background .13s;
   cursor: pointer;
-  border-radius: 0;
   line-height: 1.3;
 }
 .nav-item i {
   width: 20px;
   text-align: center;
-  font-size: .95rem;
+  font-size: 1rem;
   flex-shrink: 0;
-  opacity: .85;
 }
 .nav-item:hover  { background: var(--sidebar-hover); }
-.nav-item.active {
-  background: var(--sidebar-active);
-  font-weight: 600;
-}
+.nav-item.active { background: var(--sidebar-active); font-weight: 600; }
 
 /* Submenu */
 .nav-submenu { overflow: hidden; max-height: 0; transition: max-height .28s ease; }
-.nav-submenu.open { max-height: 300px; }
+.nav-submenu.open { max-height: 400px; }
 .nav-submenu .nav-item {
-  padding-left: 2.8rem;
-  font-size: .86rem;
+  padding-left: 3rem;
+  font-size: .88rem;
   font-weight: 400;
 }
 .nav-submenu .nav-item.active { font-weight: 600; }
 
 .nav-toggle-icon {
   margin-left: auto;
-  font-size: .7rem;
+  font-size: .72rem;
   transition: transform .24s;
   color: var(--sidebar-sub);
   flex-shrink: 0;
 }
 .nav-item.open .nav-toggle-icon { transform: rotate(180deg); }
 
-.nav-divider { height: 1px; background: var(--sidebar-border); margin: .4rem .8rem; }
+.nav-divider { height: 1px; background: var(--sidebar-border); margin: .42rem .9rem; }
 
-/* User block */
+/* User block — idéntico al dashboard */
 .sidebar-user {
-  padding: .75rem 1.1rem;
+  padding: .8rem 1.2rem;
   border-top: 1px solid var(--sidebar-border);
   display: flex;
   align-items: center;
   gap: .65rem;
 }
 .user-avatar {
-  width: 34px; height: 34px;
+  width: 36px; height: 36px;
   border-radius: 50%;
   background: var(--green-900);
   color: var(--sidebar-bg);
   display: flex; align-items: center; justify-content: center;
-  font-size: .78rem; font-weight: 700; flex-shrink: 0;
+  font-size: .8rem; font-weight: 700; flex-shrink: 0;
 }
 .user-info { display: flex; flex-direction: column; min-width: 0; }
 .user-info .user-name {
-  font-size: .88rem; font-weight: 600;
-  color: var(--green-900); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  font-size: .92rem; font-weight: 600; color: var(--green-900);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
-.user-info .user-role {
-  font-size: .7rem; color: var(--sidebar-sub);
-}
+.user-info .user-role { font-size: .73rem; color: var(--sidebar-sub); }
 
 /* =============================================
-   TOPBAR
+   TOPBAR — igual al dashboard
    ============================================= */
 .admin-topbar {
   grid-column: 2; grid-row: 1;
   background: var(--topbar-bg);
-  border-bottom: 1px solid var(--card-border);
+  border-bottom: 1px solid rgba(0,0,0,.07);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1.4rem;
+  padding: 0 1.75rem;
   height: var(--topbar-h);
   position: sticky;
   top: 0;
@@ -206,29 +196,28 @@ body {
 }
 
 .topbar-breadcrumb {
-  display: flex; align-items: center; gap: .35rem;
-  font-size: .88rem;
+  display: flex; align-items: center; gap: .4rem;
+  font-size: .92rem;
 }
 .topbar-breadcrumb a {
   color: var(--green-500); text-decoration: none; font-weight: 500;
-  display: flex; align-items: center; gap: .25rem;
-  transition: color .14s;
+  display: flex; align-items: center; gap: .25rem; transition: color .13s;
 }
 .topbar-breadcrumb a:hover { color: var(--green-700); }
-.topbar-breadcrumb a i.fa-home { font-size: .95rem; }
-.breadcrumb-sep { color: #aabfaa; font-size: .95rem; }
+.topbar-breadcrumb a i.fa-home { font-size: 1rem; }
+.breadcrumb-sep { color: #aabfaa; font-size: 1rem; line-height: 1; }
 .breadcrumb-current { color: var(--green-900); font-weight: 600; }
 
-.topbar-right { display: flex; align-items: center; gap: .85rem; }
+.topbar-right { display: flex; align-items: center; gap: .9rem; }
 
 .topbar-notif {
   position: relative; cursor: pointer;
-  width: 32px; height: 32px;
+  width: 34px; height: 34px;
   display: flex; align-items: center; justify-content: center;
-  border-radius: 50%; transition: background .14s;
+  border-radius: 50%; transition: background .13s;
 }
 .topbar-notif:hover { background: var(--green-100); }
-.topbar-notif i { font-size: 1rem; color: #3a5a3a; }
+.topbar-notif i { font-size: 1.05rem; color: #3a5a3a; }
 .notif-dot {
   position: absolute; top: 5px; right: 5px;
   width: 8px; height: 8px; border-radius: 50%;
@@ -236,38 +225,45 @@ body {
 }
 
 .topbar-profile {
-  display: flex; align-items: center; gap: .45rem;
-  cursor: pointer; padding: .25rem .5rem .25rem .25rem;
-  border-radius: 22px; transition: background .14s;
+  display: flex; align-items: center; gap: .5rem;
+  cursor: pointer; padding: .28rem .55rem .28rem .28rem;
+  border-radius: 24px; transition: background .13s;
 }
 .topbar-profile:hover { background: var(--green-100); }
+
+/* Avatar verde grande — igual al dashboard */
 .topbar-avatar {
-  width: 34px; height: 34px; border-radius: 50%;
+  width: 38px; height: 38px; border-radius: 50%;
   background: var(--green-500); color: #fff;
   display: flex; align-items: center; justify-content: center;
-  font-size: .78rem; font-weight: 700; flex-shrink: 0;
+  font-size: .82rem; font-weight: 700; flex-shrink: 0;
 }
-.topbar-name { font-size: .9rem; font-weight: 600; color: var(--green-900); }
-.topbar-chevron { font-size: .72rem; color: #8aaa8a; }
+.topbar-name { font-size: .95rem; font-weight: 600; color: var(--green-900); }
+.topbar-chevron { font-size: .75rem; color: #8aaa8a; margin-left: 1px; }
 
 /* =============================================
    MAIN
    ============================================= */
 .admin-main {
   grid-column: 2; grid-row: 2;
-  padding: 1.2rem 1.5rem;
+  padding: .75rem 1.75rem 1.6rem;
   min-height: calc(100vh - var(--topbar-h));
+  background: var(--page-bg);
 }
 
-.page-header { margin-bottom: 1rem; }
+.page-header { margin-bottom: 1.2rem; }
 .page-header h1 {
   font-family: var(--font-ui);
-  font-size: 1.55rem;
+  font-size: 1.75rem;
   font-weight: 700;
   color: var(--green-900);
   letter-spacing: -.02em;
 }
-.page-header p { font-size: .88rem; color: #5a7a5a; margin-top: .1rem; }
+.page-header p {
+  font-size: .9rem;
+  color: #5a7a5a;
+  margin-top: .18rem;
+}
 
 /* =============================================
    FOOTER
@@ -276,16 +272,16 @@ body {
   grid-column: 2; grid-row: 3;
   background: var(--topbar-bg);
   border-top: 1px solid var(--card-border);
-  padding: .5rem 1.5rem;
+  padding: .55rem 1.75rem;
 }
 .footer-inner {
   display: flex; justify-content: space-between; align-items: center;
-  font-size: .75rem; color: #8aaa8a;
+  font-size: .76rem; color: #8aaa8a;
 }
 .footer-version {
-  font-size: .72rem; font-weight: 600;
+  font-size: .73rem; font-weight: 600;
   background: var(--green-100); color: var(--green-500);
-  padding: .1rem .4rem; border-radius: 4px;
+  padding: .1rem .45rem; border-radius: 4px;
 }
 
 /* =============================================
@@ -296,9 +292,6 @@ body {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* =============================================
-   RESPONSIVE
-   ============================================= */
 @media (max-width: 900px) {
   .admin-shell { grid-template-columns: 1fr; }
   .admin-sidebar { display: none; }
