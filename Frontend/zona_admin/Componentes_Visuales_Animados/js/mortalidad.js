@@ -192,7 +192,7 @@ document.getElementById("formMortalidad").addEventListener("submit", function(e)
   /* Crea una nueva fila HTML inyectando los datos encontrados y los del formulario */
   const row = `
   <tr>
-    <td><span class="fw-bold">${arete}</span></td>
+    <td>${arete}</td>
     <td>${animal.trazabilidad}</td>
     <td>${animal.nacimiento}</td>
     <td>${fecha}</td>
@@ -206,12 +206,25 @@ document.getElementById("formMortalidad").addEventListener("submit", function(e)
   /* Agrega la nueva fila al final de la tabla existente */
   table.innerHTML += row;
 
+  /* Cierra automáticamente la ventana modal usando la API de Bootstrap */
+  const modalElement = document.getElementById('modalMortalidad');
+  const modal = bootstrap.Modal.getInstance(modalElement);
+  if (modal) {
+      modal.hide();
+  }
+
   /* Limpia los campos del formulario tras el registro exitoso */
   this.reset();
-
-  /* Cierra automáticamente la ventana modal usando la API de Bootstrap */
-  const modal = bootstrap.Modal.getInstance(document.getElementById('modalMortalidad'));
-  modal.hide();
+  
+  // Mostrar alerta de éxito después de que el modal se cierre
+  setTimeout(() => {
+      Swal.fire({
+        icon: 'success',
+        title: '¡Guardado!',
+        text: 'Registro guardado exitosamente.',
+        confirmButtonColor: '#10b981'
+      });
+  }, 400);
 });
 
     /**
@@ -261,3 +274,17 @@ function filterTableModal() {
 document.getElementById('searchInputModal').addEventListener('input', filterTableModal);
 document.getElementById('causeFilterModal').addEventListener('change', filterTableModal);
 document.getElementById('sexoFilterModal').addEventListener('change', filterTableModal);
+
+/**
+ * Función para mostrar alerta de cancelación usando SweetAlert2
+ */
+function cancelarRegistro() {
+    setTimeout(() => {
+        Swal.fire({
+            icon: 'error',
+            title: 'Cancelado',
+            text: 'El registro ha sido cancelado.',
+            confirmButtonColor: '#ef4444'
+        });
+    }, 300);
+}

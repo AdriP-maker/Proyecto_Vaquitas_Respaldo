@@ -29,7 +29,7 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
-  height: 100%; /* 🔥 MISMO ALTO */
+  height: 100%; 
   border: 1px solid rgba(0,0,0,0.05);
   box-shadow: 0 6px 18px rgba(0,0,0,0.05);
   transition: all 0.25s ease;

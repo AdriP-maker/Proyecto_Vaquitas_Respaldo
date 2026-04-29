@@ -33,6 +33,7 @@ $breadcrumb = [
     <link rel="stylesheet" href="../Componentes_Visuales_Animados/css/admin_styles.css" />
     <link rel="stylesheet" href="../Componentes_Visuales_Animados/css/mortalidad_styles.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -48,11 +49,11 @@ $breadcrumb = [
             <!--Inicia el include del llamado de modal dea la tabla-->
             <?php include COMPONENTES . '/modal_tabla.html'; ?>
 
-            <!--Inicia el include del llamado de la Tabla de Datos-->
-            <?php include COMPONENTES . '/tabla.html'; ?>
-
             <!--Inicia el include del llamado del Tarjetas Estadísticas-->
             <?php include COMPONENTES . '/cards_Estadisticas.html'; ?>
+
+            <!--Inicia el include del llamado de la Tabla de Datos-->
+            <?php include COMPONENTES . '/tabla.html'; ?>
 
             <!--Inicia el include del llamado del Tarjetas grafica-->
             <?php include COMPONENTES . '/grafica.html'; ?>
